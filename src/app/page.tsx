@@ -1,270 +1,135 @@
-import {
-  KeyRound,
-  ShieldCheck,
-  Cpu,
-  Airplay,
-  Car,
-  Wrench,
-  Box,
-  Gauge,
-  Phone,
-  Mail,
-  MapPin,
-  Truck,
-  Microscope,
-  CheckCircle2,
-  MessageCircle,
-  CircuitBoard,
-  Zap,
-  Shield,
-} from "lucide-react";
+import { Airplay, BriefcaseBusiness, Car, Cpu, Gauge, KeyRound, Mail, MapPin, Microscope, Phone, ShieldCheck, Truck, Wrench, CheckCircle2, MessageCircle, Instagram, Youtube } from 'lucide-react';
 
-const phone = "632 982 646";
-const whatsappUrl = "https://wa.me/34632982646";
-const address = "Av. Andalucía 125 BJ, Puente de Génave, Jaén";
-const mapsUrl = "https://www.google.com/maps/search/?api=1&query=Av.%20Andaluc%C3%ADa%20125%20BJ%2C%20Puente%20de%20G%C3%A9nave%2C%20Ja%C3%A9n";
+const whatsapp = 'https://wa.me/34632982646';
+const maps = 'https://www.google.com/maps/search/?api=1&query=Av+Andalucia+125+BJ+Puente+de+Genave+Jaen';
 
 const services = [
-  { icon: KeyRound, title: "Llaves y Smart Keys", text: "Duplicado, pérdida total, mandos, programación y reparación." },
-  { icon: ShieldCheck, title: "Inmovilizadores / IMMO", text: "Sincronización, adaptación y recuperación de sistemas inmovilizadores." },
-  { icon: Cpu, title: "ECU / TCU / Módulos", text: "Clonación, reparación, programación y venta de centralitas y módulos." },
-  { icon: Airplay, title: "Airbag Crash Data", text: "Lectura, reset crash, reparación de centralitas y pretensores." },
-  { icon: Car, title: "BMW CAS / FEM / BDC", text: "Diagnóstico, programación y recuperación de sistemas BMW." },
-  { icon: Wrench, title: "Mercedes EZS / ELV", text: "Reparación, clonación y recuperación de sistemas Mercedes." },
-  { icon: Gauge, title: "Reprogramación ECU", text: "Soluciones electrónicas y software profesional a medida." },
-  { icon: Box, title: "Servicio nacional", text: "Trabajos por envío para particulares, talleres y profesionales." },
+  { icon: KeyRound, title: 'Llaves y Smart Keys', text: 'Duplicado, pérdida total, mandos, programación y reparación.' },
+  { icon: ShieldCheck, title: 'Inmovilizadores', text: 'Sincronización, adaptación, recuperación y sistemas IMMO.' },
+  { icon: Cpu, title: 'ECU / TCU / Módulos', text: 'Lectura, escritura, clonación, reparación y programación.' },
+  { icon: Wrench, title: 'Mercedes EZS / ELV', text: 'Reparación, clonación, adaptación y recuperación.' },
+  { icon: Gauge, title: 'BMW CAS / FEM / BDC', text: 'Programación, clonación y diagnóstico avanzado.' },
+  { icon: Airplay, title: 'Airbag Crash Data', text: 'Reset crash, reparación de centralitas y pretensores.' },
+];
+
+const quick = [
+  { icon: KeyRound, title: 'Llaves y Smart Keys' },
+  { icon: ShieldCheck, title: 'Inmovilizadores' },
+  { icon: Cpu, title: 'ECU / TCU Airbag / Módulos' },
+  { icon: Car, title: 'BMW · Mercedes Audi · VAG' },
+  { icon: Microscope, title: 'Laboratorio electrónico' },
+  { icon: Truck, title: 'Servicio nacional por envío' },
 ];
 
 const cases = [
-  { title: "Seat León", problem: "Sin arranque", solution: "Bombín averiado, nueva llave y programación completa." },
-  { title: "BMW Serie 1", problem: "FEM averiado", solution: "Clonación, programación y vehículo recuperado." },
-  { title: "Mercedes W204", problem: "EZS bloqueado", solution: "Reparación electrónica y arranque restaurado." },
-  { title: "Audi / VAG", problem: "Airbag Crash Data", solution: "Lectura, reset crash y sistema operativo." },
+  { car: 'BMW Serie 1', problem: 'FEM averiado', solution: 'Clonación y programación', result: 'Vehículo operativo' },
+  { car: 'Mercedes W204', problem: 'EZS bloqueado', solution: 'Reparación electrónica', result: 'Arranque recuperado' },
+  { car: 'Opel Insignia', problem: 'ECU sin arranque', solution: 'Diagnóstico y recuperación', result: 'Vehículo recuperado' },
 ];
 
-const labItems = [
-  "Microscopía y soldadura SMD",
-  "Equipos de lectura y programación avanzados",
-  "Diagnosis multimarca y programación electrónica",
-  "Entorno técnico especializado para ECUs, llaves y módulos",
-];
+const partners = ['File Service', 'Clonación', 'Reparaciones', 'Llaves e IMMO', 'Soporte técnico', 'Servicio nacional'];
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-akdark text-white">
-      <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/85 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
-          <a href="#inicio" className="flex items-center gap-3">
-            <div className="text-4xl font-black italic leading-none">
-              <span className="text-white">A</span><span className="text-akred">K</span>
-            </div>
-            <div className="hidden leading-tight sm:block">
-              <p className="font-black tracking-wide">AUTOKEYS</p>
-              <p className="font-black text-akred">REMAPS PRO</p>
-            </div>
-          </a>
-          <nav className="hidden items-center gap-7 text-sm font-bold uppercase tracking-wide text-white/80 lg:flex">
-            <a href="#servicios" className="hover:text-akred">Servicios</a>
-            <a href="#casos" className="hover:text-akred">Casos reales</a>
-            <a href="#laboratorio" className="hover:text-akred">Laboratorio</a>
-            <a href="#talleres" className="hover:text-akred">Para talleres</a>
-            <a href="#contacto" className="hover:text-akred">Contacto</a>
-          </nav>
-          <a href={whatsappUrl} className="rounded-lg border border-akred px-4 py-2 text-sm font-black text-white hover:bg-akred">
-            WhatsApp
-          </a>
-        </div>
+    <main>
+      <header className="topbar">
+        <a className="brand" href="#inicio" aria-label="Autokeys Remaps Pro">
+          <span className="ak">AK</span>
+          <span><b>Autokeys</b><em>Remaps Pro</em><small>Electrónica avanzada del automóvil</small></span>
+        </a>
+        <nav>
+          <a href="#servicios">Servicios</a>
+          <a href="#talleres">Talleres</a>
+          <a href="#casos">Casos reales</a>
+          <a href="#laboratorio">Laboratorio</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+        <a className="top-whatsapp" href={whatsapp} target="_blank">WhatsApp</a>
       </header>
 
-      <section id="inicio" className="hero-bg pt-28">
-        <div className="mx-auto grid min-h-[780px] max-w-7xl items-center gap-10 px-5 py-20 lg:grid-cols-[1.1fr_.9fr]">
-          <div>
-            <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-akred/60 bg-akred/10 px-4 py-2 text-sm font-bold uppercase tracking-widest text-akred">
-              <CircuitBoard size={18} /> Laboratorio técnico especializado
-            </p>
-            <h1 className="max-w-3xl text-5xl font-black uppercase leading-none tracking-tight sm:text-7xl">
-              Autokeys <span className="text-akred">Remaps</span> Pro
-            </h1>
-            <h2 className="mt-5 text-2xl font-bold uppercase tracking-wide text-white/90 sm:text-3xl">
-              Electrónica Avanzada del Automóvil
-            </h2>
-            <p className="mt-6 max-w-3xl text-3xl font-black uppercase leading-tight text-white sm:text-4xl">
-              Especialistas en resolver <span className="text-akred">lo que otros no pueden.</span>
-            </p>
-            <p className="mt-4 text-xl font-black text-white/90">Todavía no está todo dicho...</p>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-white/75">
-              Llaves, inmovilizadores, ECUs, módulos electrónicos, airbag y diagnosis avanzada para particulares y talleres.
-            </p>
-            <p className="mt-4 text-sm font-bold uppercase tracking-wide text-white/65">
-              BMW • Mercedes • Audi • VAG • PSA • Servicio nacional por envío
-            </p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <a href={whatsappUrl} className="inline-flex items-center justify-center gap-3 rounded-xl bg-akred px-6 py-4 font-black uppercase shadow-2xl shadow-red-900/40 hover:bg-red-700">
-                <MessageCircle /> Solicitar presupuesto
-              </a>
-              <a href="#talleres" className="inline-flex items-center justify-center gap-3 rounded-xl border border-white/25 bg-white/5 px-6 py-4 font-black uppercase hover:bg-white/10">
-                <Truck /> Soy taller / distribuidor
-              </a>
+      <section id="inicio" className="hero">
+        <div className="hero-overlay" />
+        <div className="hero-content">
+          <div className="hero-copy">
+            <h1><span>Autokeys</span><strong>Remaps Pro</strong></h1>
+            <h2>Electrónica avanzada del automóvil</h2>
+            <p className="claim">Especialistas en resolver lo que otros <b>no pueden.</b></p>
+            <p className="subclaim">Llaves, inmovilizadores, ECUs, módulos electrónicos, airbag, diagnosis avanzada y recuperación de sistemas para particulares y talleres.</p>
+            <div className="hero-actions">
+              <a className="btn btn-primary" href={whatsapp} target="_blank"><MessageCircle size={22}/> Solicitar presupuesto</a>
+              <a className="btn btn-outline" href="#talleres"><BriefcaseBusiness size={22}/> Soy taller / distribuidor</a>
             </div>
+            <p className="brands">BMW · Mercedes · Audi · VAG · Land Rover</p>
           </div>
-
-          <div className="rounded-3xl border border-white/10 bg-black/55 p-6 shadow-ak backdrop-blur">
-            <div className="grid gap-4 sm:grid-cols-2">
-              {[
-                { Icon: KeyRound, text: "Llaves e IMMO" },
-                { Icon: Cpu, text: "ECU y módulos" },
-                { Icon: Microscope, text: "Laboratorio" },
-                { Icon: Truck, text: "Servicio nacional" },
-              ].map(({ Icon, text }) => (
-                <div key={text} className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                  <Icon className="mb-4 text-akred" size={34} />
-                  <p className="font-black uppercase">{text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-white/10 bg-akgray py-10">
-        <div className="mx-auto grid max-w-7xl gap-8 px-5 lg:grid-cols-[1.2fr_.8fr]">
-          <div>
-            <h2 className="text-3xl font-black uppercase"><span className="text-akred">No somos</span> un taller convencional</h2>
-            <p className="mt-4 max-w-3xl text-lg leading-8 text-white/70">
-              En Autokeys Remaps Pro trabajamos donde la mecánica termina y comienza la electrónica avanzada del automóvil.
-              Diagnosticamos, reparamos, clonamos, programamos y recuperamos sistemas electrónicos donde otros se detienen.
-            </p>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-            {["Diagnóstico profesional", "Equipamiento avanzado", "Resultados reales"].map((item) => (
-              <div key={item} className="flex items-center gap-3 rounded-xl border border-white/10 bg-black/40 p-4">
-                <CheckCircle2 className="text-akred" />
-                <span className="font-bold">{item}</span>
+          <div className="hero-car" aria-hidden="true">
+            <div className="car-glow" />
+            <div className="car-card">
+              <div className="fake-car">
+                <span className="headlight left" /><span className="headlight right" />
+                <span className="grille" />
               </div>
-            ))}
+              <div className="lab-lines" />
+              <b>Laboratorio Autokeys</b>
+            </div>
           </div>
         </div>
-      </section>
-
-      <section id="servicios" className="grid-bg mx-auto max-w-7xl px-5 py-20">
-        <h2 className="text-center text-4xl font-black uppercase">Nuestros <span className="text-akred">servicios</span></h2>
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map(({ icon: Icon, title, text }) => (
-            <article key={title} className="rounded-2xl border border-white/10 bg-white/[0.035] p-6 shadow-ak transition hover:-translate-y-1 hover:border-akred/70">
-              <Icon size={38} className="text-akred" />
-              <h3 className="mt-5 text-lg font-black uppercase">{title}</h3>
-              <p className="mt-3 text-sm leading-6 text-white/65">{text}</p>
-            </article>
-          ))}
+        <div className="quickbar">
+          {quick.map((q) => <div className="quickitem" key={q.title}><q.icon size={28}/><span>{q.title}</span></div>)}
         </div>
       </section>
 
-      <section id="casos" className="bg-akgray px-5 py-20">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="text-4xl font-black uppercase">Casos que otros dieron por <span className="text-akred">perdidos</span></h2>
-          <div className="mt-10 grid gap-6 lg:grid-cols-4">
-            {cases.map((item) => (
-              <article key={item.title} className="overflow-hidden rounded-2xl border border-white/10 bg-black/50">
-                <div className="h-36 bg-gradient-to-br from-zinc-800 via-black to-red-950 p-6">
-                  <p className="text-2xl font-black uppercase">{item.title}</p>
-                </div>
-                <div className="p-6">
-                  <p className="font-black uppercase text-akred">{item.problem}</p>
-                  <p className="mt-3 leading-7 text-white/70">{item.solution}</p>
-                  <p className="mt-5 inline-flex items-center gap-2 font-black text-green-400"><CheckCircle2 size={20} /> Recuperado</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="laboratorio" className="mx-auto grid max-w-7xl gap-10 px-5 py-20 lg:grid-cols-[.8fr_1.2fr]">
+      <section className="not-taller">
         <div>
-          <h2 className="text-4xl font-black uppercase">Laboratorio de electrónica <span className="text-akred">avanzada</span></h2>
-          <p className="mt-5 leading-8 text-white/70">
-            Equipamiento profesional para diagnosis, programación, reparación y recuperación de sistemas electrónicos del automóvil.
-          </p>
-          <ul className="mt-8 space-y-4">
-            {labItems.map((item) => (
-              <li key={item} className="flex items-center gap-3 text-white/85"><CheckCircle2 className="text-akred" /> {item}</li>
-            ))}
-          </ul>
+          <h2><span>No somos</span> un taller convencional</h2>
+          <p>En Autokeys Remaps Pro trabajamos sobre averías electrónicas, inmovilizadores, módulos, llaves y centralitas donde muchos talleres se detienen.</p>
+          <p><b>Diagnosticamos, reparamos, clonamos, programamos y recuperamos</b> sistemas electrónicos del automóvil.</p>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {[
-            { title: "FLEX", subtitle: "Lectura y programación" },
-            { title: "AUTEL", subtitle: "Diagnosis y llaves" },
-            { title: "ECU", subtitle: "Clonación y reparación" },
-            { title: "MICROSCOPIO", subtitle: "Electrónica SMD" },
-          ].map((item) => (
-            <div key={item.title} className="flex h-44 flex-col justify-end rounded-2xl border border-white/10 bg-gradient-to-br from-zinc-900 to-black p-6">
-              <p className="text-2xl font-black text-white/90">{item.title}</p>
-              <p className="mt-1 text-sm text-white/55">{item.subtitle}</p>
-            </div>
-          ))}
+        <div className="pcb-panel"><span/><span/><span/></div>
+      </section>
+
+      <section id="servicios" className="section">
+        <h2>Nuestros <span>servicios</span></h2>
+        <div className="service-grid">
+          {services.map((service) => <article className="service-card" key={service.title}><service.icon size={42}/><h3>{service.title}</h3><p>{service.text}</p></article>)}
         </div>
       </section>
 
-      <section id="talleres" className="border-y border-white/10 bg-black px-5 py-20">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.9fr_1.1fr]">
-          <div>
-            <h2 className="text-4xl font-black uppercase">¿Eres taller? <span className="text-akred">Trabajamos contigo</span></h2>
-            <p className="mt-5 leading-8 text-white/70">
-              Soluciones profesionales para talleres de toda España: file service, clonación, reparaciones electrónicas, programación de llaves e inmovilizadores.
-            </p>
-            <a href={whatsappUrl} className="mt-8 inline-flex rounded-xl border border-akred px-6 py-4 font-black uppercase text-white hover:bg-akred">
-              Solicitar colaboración
-            </a>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {["File Service", "Clonación", "Reparaciones", "Llaves e IMMO", "Soporte técnico", "Servicio nacional"].map((item) => (
-              <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.035] p-5 text-center font-black uppercase">
-                {item}
-              </div>
-            ))}
-          </div>
+      <section id="talleres" className="partners">
+        <div className="partners-copy">
+          <h2>¿Eres taller? <span>Trabajamos contigo.</span></h2>
+          <p>Soluciones profesionales para talleres de toda España: file service, clonación, reparaciones electrónicas, programación de llaves e inmovilizadores.</p>
+          <a href={whatsapp} target="_blank" className="btn btn-outline">Solicitar colaboración</a>
+        </div>
+        <div className="partner-grid">{partners.map((p) => <div key={p}>{p}</div>)}</div>
+      </section>
+
+      <section id="casos" className="section cases-section">
+        <div className="section-head"><h2>Casos <span>reales</span></h2><p>Los iremos actualizando con trabajos reales publicados en redes.</p></div>
+        <div className="case-grid">
+          {cases.map((c) => <article className="case-card" key={c.car}><div className="case-photo"><Car size={46}/></div><h3>{c.car}</h3><p><b>Problema:</b> {c.problem}</p><p><b>Solución:</b> {c.solution}</p><p className="ok"><CheckCircle2 size={18}/> {c.result}</p></article>)}
+          <article className="case-card cta"><h3>¿Tienes un caso complicado?</h3><p>Envíanos la información y estudiamos tu caso sin compromiso.</p><a href={whatsapp} target="_blank" className="btn btn-primary"><MessageCircle size={20}/> Contactar</a></article>
         </div>
       </section>
 
-      <section id="contacto" className="mx-auto max-w-7xl px-5 py-16">
-        <h2 className="text-4xl font-black">Cuéntanos tu <span className="text-akred">caso</span></h2>
-        <div className="mt-8 grid gap-5 md:grid-cols-3">
-          <a href={whatsappUrl} className="flex min-h-40 items-center gap-5 rounded-2xl bg-green-600 p-7 hover:bg-green-700">
-            <MessageCircle size={58} className="shrink-0" />
-            <div>
-              <p className="contact-card-title text-2xl">whatsapp</p>
-              <p className="mt-2 text-sm font-bold italic text-white/85">respuesta rápida para presupuestos</p>
-            </div>
-          </a>
-          <a href="mailto:info@autokeyspro.es" className="flex min-h-40 items-center gap-5 rounded-2xl border border-white/10 bg-white/[0.035] p-7 hover:border-akred">
-            <Mail size={46} className="shrink-0 text-akred" />
-            <div>
-              <p className="contact-card-title text-xl">info@autokeyspro.es</p>
-              <p className="mt-2 text-sm font-bold italic text-white/65">soporte técnico y presupuestos</p>
-            </div>
-          </a>
-          <a href={mapsUrl} target="_blank" className="map-card flex min-h-40 items-center gap-5 rounded-2xl border border-white/10 p-7 hover:border-akred">
-            <MapPin size={48} className="shrink-0 text-akred" />
-            <div>
-              <p className="contact-card-title text-xl">av. andalucía 125 bj</p>
-              <p className="mt-2 text-sm font-bold italic text-white/80">puente de génave, jaén</p>
-              <p className="mt-3 inline-flex rounded-lg border border-akred/60 px-3 py-1 text-xs font-black uppercase text-akred">cómo llegar</p>
-            </div>
-          </a>
+      <section id="laboratorio" className="laboratory">
+        <div className="lab-gallery"><div/><div/><div/></div>
+        <div className="lab-copy"><h2>Nuestro <span>laboratorio</span></h2><p>Equipamiento profesional para diagnosis, programación, lectura, clonación y reparación electrónica.</p><ul><li>No cambiamos piezas por probar.</li><li>Diagnosticamos con criterio técnico.</li><li>Trabajamos sobre sistemas complejos del automóvil.</li></ul></div>
+      </section>
+
+      <section id="contacto" className="contact">
+        <h2>Cuéntanos tu <span>caso</span></h2>
+        <div className="contact-grid">
+          <a className="contact-card whatsapp-card" href={whatsapp} target="_blank"><MessageCircle size={40}/><strong>whatsapp</strong><em>respuesta rápida</em></a>
+          <a className="contact-card" href="mailto:info@autokeyspro.es"><Mail size={34}/><strong>info@autokeyspro.es</strong><em>soporte y presupuestos</em></a>
+          <a className="contact-card map-card" href={maps} target="_blank"><MapPin size={34}/><strong>av. andalucía 125 bj</strong><em>puente de génave, jaén · cómo llegar</em></a>
         </div>
       </section>
 
-      <a href={whatsappUrl} aria-label="Abrir WhatsApp" className="fixed bottom-5 right-5 z-50 inline-flex h-16 w-16 items-center justify-center rounded-full bg-green-600 shadow-2xl hover:bg-green-700">
-        <MessageCircle size={34} />
-      </a>
-
-      <footer className="border-t border-white/10 bg-black px-5 py-10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-white/55 md:flex-row md:items-center md:justify-between">
-          <p>© 2026 Autokeys Remaps Pro | Electrónica Avanzada del Automóvil</p>
-          <p className="font-bold italic lowercase">av. andalucía 125 bj, puente de génave, jaén</p>
-        </div>
+      <footer>
+        <div><b>Autokeys Remaps Pro</b><span>electrónica avanzada del automóvil</span></div>
+        <div className="footer-icons"><Instagram size={20}/><Youtube size={20}/><MessageCircle size={20}/></div>
       </footer>
+      <a className="float-whatsapp" href={whatsapp} target="_blank" aria-label="WhatsApp"><MessageCircle size={34}/></a>
     </main>
   );
 }

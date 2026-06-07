@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1000" viewBox="0 0 1800 1000">
+  <defs>
+    <radialGradient id="glowRed" cx="73%" cy="32%" r="45%">
+      <stop offset="0%" stop-color="#e50914" stop-opacity="0.55"/>
+      <stop offset="45%" stop-color="#8b0008" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowWhite" cx="64%" cy="56%" r="40%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="floor" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#111"/>
+      <stop offset="1" stop-color="#020202"/>
+    </linearGradient>
+    <linearGradient id="carPaint" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#050505"/>
+      <stop offset="0.45" stop-color="#1a1a1a"/>
+      <stop offset="1" stop-color="#050505"/>
+    </linearGradient>
+    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#000" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+  <rect width="1800" height="1000" fill="#040404"/>
+  <rect width="1800" height="1000" fill="url(#glowRed)"/>
+  <rect width="1800" height="1000" fill="url(#glowWhite)"/>
+  <g opacity="0.28">
+    <path d="M1130 0v1000M1220 0v1000M1310 0v1000M1400 0v1000M1490 0v1000M1580 0v1000" stroke="#222"/>
+    <path d="M0 620h1800M0 700h1800M0 780h1800M0 860h1800" stroke="#272727"/>
+  </g>
+  <g opacity="0.75">
+    <rect x="1020" y="110" width="460" height="70" rx="12" fill="#0b0b0b" stroke="#303030"/>
+    <path d="M1065 145h350" stroke="#e50914" stroke-width="6" stroke-linecap="round"/>
+    <path d="M1090 160h260" stroke="#fff" stroke-opacity="0.45" stroke-width="3" stroke-linecap="round"/>
+    <rect x="1110" y="215" width="330" height="210" rx="16" fill="#090909" stroke="#333"/>
+    <path d="M1150 370 C1190 290 1230 320 1260 250 C1300 350 1325 300 1400 360" fill="none" stroke="#e50914" stroke-width="7" stroke-linecap="round"/>
+    <path d="M1150 330h250" stroke="#fff" stroke-opacity="0.25"/>
+    <path d="M1150 285h250" stroke="#fff" stroke-opacity="0.18"/>
+  </g>
+  <g transform="translate(670,425)" filter="url(#softShadow)">
+    <ellipse cx="470" cy="322" rx="520" ry="70" fill="#000" opacity="0.8" filter="url(#blur)"/>
+    <path d="M70 315 C120 205 230 165 360 155 L600 145 C760 135 905 170 1035 250 L1125 308 C1145 322 1132 350 1098 350 H120 C75 350 52 336 70 315Z" fill="url(#carPaint)" stroke="#2e2e2e" stroke-width="4"/>
+    <path d="M315 155 C360 92 440 62 560 58 C690 55 790 88 865 165" fill="none" stroke="#3a3a3a" stroke-width="34" stroke-linecap="round"/>
+    <path d="M335 155 C400 105 495 88 630 90 C720 91 790 120 840 165" fill="#060606" stroke="#111" stroke-width="4"/>
+    <path d="M205 290 H360 C410 290 432 325 390 338 H190 C150 338 155 305 205 290Z" fill="#e9f6ff" opacity="0.92"/>
+    <path d="M800 288 H1010 C1060 288 1075 323 1025 337 H790 C750 337 750 304 800 288Z" fill="#e9f6ff" opacity="0.92"/>
+    <path d="M214 313 H350" stroke="#65bfff" stroke-width="13" stroke-linecap="round" opacity="0.9"/>
+    <path d="M815 313 H998" stroke="#65bfff" stroke-width="13" stroke-linecap="round" opacity="0.9"/>
+    <circle cx="310" cy="355" r="82" fill="#050505" stroke="#2e2e2e" stroke-width="18"/>
+    <circle cx="310" cy="355" r="39" fill="#141414" stroke="#606060" stroke-width="8"/>
+    <circle cx="900" cy="355" r="82" fill="#050505" stroke="#2e2e2e" stroke-width="18"/>
+    <circle cx="900" cy="355" r="39" fill="#141414" stroke="#606060" stroke-width="8"/>
+    <path d="M430 250 C540 215 705 208 825 230" stroke="#e50914" stroke-width="8" stroke-linecap="round" opacity="0.75"/>
+    <path d="M485 318 H720" stroke="#5b5b5b" stroke-width="8" stroke-linecap="round" opacity="0.5"/>
+  </g>
+  <g transform="translate(1060,655) rotate(-7)" opacity="0.92">
+    <rect x="0" y="0" width="330" height="215" rx="18" fill="#0a0a0a" stroke="#555" stroke-width="3"/>
+    <rect x="28" y="30" width="275" height="145" rx="6" fill="#111" stroke="#2c2c2c"/>
+    <circle cx="155" cy="104" r="42" fill="#151515" stroke="#e50914" stroke-width="6"/>
+    <path d="M127 106h30l12-32 18 65 12-33h34" fill="none" stroke="#e50914" stroke-width="6" stroke-linecap="round"/>
+    <text x="165" y="198" text-anchor="middle" font-family="Arial Black, Arial" font-size="34" fill="#fff">AUTEL</text>
+  </g>
+  <g transform="translate(865,710)" opacity="0.95">
+    <rect x="0" y="0" width="310" height="210" rx="16" fill="#151515" stroke="#3d3d3d"/>
+    <rect x="25" y="25" width="260" height="160" rx="8" fill="#222" stroke="#555"/>
+    <circle cx="85" cy="85" r="12" fill="#c6a976"/>
+    <circle cx="135" cy="72" r="10" fill="#aaa"/>
+    <rect x="160" y="60" width="70" height="55" fill="#0b0b0b" stroke="#777"/>
+    <path d="M35 150 C95 125 150 185 275 135" stroke="#e50914" stroke-width="6" fill="none" opacity="0.8"/>
+    <path d="M40 55h85M40 75h60M45 105h70M165 142h82" stroke="#666" stroke-width="4"/>
+  </g>
+  <g transform="translate(780,185)" opacity="0.9">
+    <text font-family="Arial Black, Arial" font-size="92" fill="#fff" font-style="italic">AK</text>
+    <text x="130" y="44" font-family="Arial Black, Arial" font-size="34" fill="#fff">AUTOKEYS</text>
+    <text x="130" y="82" font-family="Arial Black, Arial" font-size="36" fill="#e50914">REMAPS PRO</text>
+  </g>
+  <path d="M1220 520h400" stroke="#e50914" stroke-width="4" opacity="0.45"/>
+  <path d="M1200 535h470" stroke="#fff" stroke-width="2" opacity="0.18"/>
+  <rect width="1800" height="1000" fill="url(#floor)" opacity="0.08"/>
+</svg>

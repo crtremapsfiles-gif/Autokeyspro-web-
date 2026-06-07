@@ -22,6 +22,7 @@ import {
 const phone = "632 982 646";
 const whatsappUrl = "https://wa.me/34632982646";
 const address = "Av. Andalucía 125 BJ, Puente de Génave, Jaén";
+const mapsUrl = "https://www.google.com/maps/search/?api=1&query=Av.%20Andaluc%C3%ADa%20125%20BJ%2C%20Puente%20de%20G%C3%A9nave%2C%20Ja%C3%A9n";
 
 const services = [
   { icon: KeyRound, title: "Llaves y Smart Keys", text: "Duplicado, pérdida total, mandos, programación y reparación." },
@@ -227,28 +228,41 @@ export default function Home() {
       </section>
 
       <section id="contacto" className="mx-auto max-w-7xl px-5 py-16">
-        <h2 className="text-4xl font-black uppercase">Cuéntanos tu <span className="text-akred">caso</span></h2>
+        <h2 className="text-4xl font-black">Cuéntanos tu <span className="text-akred">caso</span></h2>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
-          <a href={whatsappUrl} className="flex items-center gap-4 rounded-2xl bg-green-600 p-6 font-black uppercase hover:bg-green-700">
-            <Phone /> WhatsApp {phone}
+          <a href={whatsappUrl} className="flex min-h-40 items-center gap-5 rounded-2xl bg-green-600 p-7 hover:bg-green-700">
+            <MessageCircle size={58} className="shrink-0" />
+            <div>
+              <p className="contact-card-title text-2xl">whatsapp</p>
+              <p className="mt-2 text-sm font-bold italic text-white/85">respuesta rápida para presupuestos</p>
+            </div>
           </a>
-          <a href="mailto:info@autokeyspro.es" className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.035] p-6 font-black uppercase hover:border-akred">
-            <Mail /> info@autokeyspro.es
+          <a href="mailto:info@autokeyspro.es" className="flex min-h-40 items-center gap-5 rounded-2xl border border-white/10 bg-white/[0.035] p-7 hover:border-akred">
+            <Mail size={46} className="shrink-0 text-akred" />
+            <div>
+              <p className="contact-card-title text-xl">info@autokeyspro.es</p>
+              <p className="mt-2 text-sm font-bold italic text-white/65">soporte técnico y presupuestos</p>
+            </div>
           </a>
-          <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.035] p-6 font-black uppercase">
-            <MapPin className="text-akred" /> {address}
-          </div>
+          <a href={mapsUrl} target="_blank" className="map-card flex min-h-40 items-center gap-5 rounded-2xl border border-white/10 p-7 hover:border-akred">
+            <MapPin size={48} className="shrink-0 text-akred" />
+            <div>
+              <p className="contact-card-title text-xl">av. andalucía 125 bj</p>
+              <p className="mt-2 text-sm font-bold italic text-white/80">puente de génave, jaén</p>
+              <p className="mt-3 inline-flex rounded-lg border border-akred/60 px-3 py-1 text-xs font-black uppercase text-akred">cómo llegar</p>
+            </div>
+          </a>
         </div>
       </section>
 
-      <a href={whatsappUrl} className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-green-600 px-5 py-4 font-black uppercase shadow-2xl hover:bg-green-700">
-        <MessageCircle /> WhatsApp
+      <a href={whatsappUrl} aria-label="Abrir WhatsApp" className="fixed bottom-5 right-5 z-50 inline-flex h-16 w-16 items-center justify-center rounded-full bg-green-600 shadow-2xl hover:bg-green-700">
+        <MessageCircle size={34} />
       </a>
 
       <footer className="border-t border-white/10 bg-black px-5 py-10">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-white/55 md:flex-row md:items-center md:justify-between">
           <p>© 2026 Autokeys Remaps Pro | Electrónica Avanzada del Automóvil</p>
-          <p>{address}</p>
+          <p className="font-bold italic lowercase">av. andalucía 125 bj, puente de génave, jaén</p>
         </div>
       </footer>
     </main>

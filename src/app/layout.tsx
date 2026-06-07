@@ -1,9 +1,9 @@
-import type { Metadata } from 'next';
-import './globals.css';
+import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'Autokeys Remaps Pro | Electrónica avanzada del automóvil',
-  description: 'Laboratorio especializado en llaves, inmovilizadores, ECU, módulos, airbag, BMW, Mercedes, Audi y VAG. Servicio nacional.',
+  title: "Autokeys Remaps Pro | Electrónica Avanzada del Automóvil",
+  description: "Laboratorio de electrónica avanzada del automóvil. Llaves, IMMO, ECU, módulos, BMW, Mercedes, Audi, VAG y servicio nacional.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

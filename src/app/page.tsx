@@ -4,7 +4,7 @@ const services = [
   { icon: KeyRound, title: "Llaves y Smart Keys", text: "Duplicado, pérdida total, mandos, programación y reparación." },
   { icon: ShieldCheck, title: "Inmovilizadores", text: "Sincronización, adaptación y recuperación de sistemas IMMO." },
   { icon: Cpu, title: "ECU / TCU / Módulos", text: "Clonación, reparación, programación y venta de centralitas." },
-  { icon: Airbag, title: "Airbag Crash Data", text: "Lectura, reset crash, reparación de centralitas y pretensores." },
+  { icon: <Airplay></Airplay>, title: "Airbag Crash Data", text: "Lectura, reset crash, reparación de centralitas y pretensores." },
   { icon: Car, title: "BMW CAS / FEM / BDC", text: "Diagnóstico, programación y recuperación de sistemas BMW." },
   { icon: Wrench, title: "Mercedes EZS / ELV", text: "Reparación, clonación y recuperación de sistemas Mercedes." },
   { icon: Gauge, title: "Reprogramación ECU", text: "Soluciones electrónicas y software profesional a medida." },

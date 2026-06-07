@@ -17,6 +17,8 @@ import {
   CircuitBoard,
 } from "lucide-react";
 
+const whatsappUrl = "https://wa.me/34632982646";
+
 const services = [
   { icon: KeyRound, title: "Llaves y Smart Keys", text: "Duplicado, pérdida total, mandos, programación y reparación." },
   { icon: ShieldCheck, title: "Inmovilizadores", text: "Sincronización, adaptación y recuperación de sistemas IMMO." },
@@ -62,7 +64,7 @@ export default function Home() {
             <a href="#talleres" className="hover:text-akred">Para talleres</a>
             <a href="#contacto" className="hover:text-akred">Contacto</a>
           </nav>
-          <a href="https://wa.me/34632982646" className="rounded-lg border border-akred px-4 py-2 text-sm font-black text-white hover:bg-akred">
+          <a href={whatsappUrl} className="rounded-lg border border-akred px-4 py-2 text-sm font-black text-white hover:bg-akred">
             WhatsApp
           </a>
         </div>
@@ -80,14 +82,12 @@ export default function Home() {
             <h2 className="mt-5 text-2xl font-bold uppercase tracking-wide text-white/90 sm:text-3xl">
               Electrónica Avanzada del Automóvil
             </h2>
-            <p className="mt-6 text-2xl font-black text-white">
-              Todavía no está todo dicho...
-            </p>
+            <p className="mt-6 text-2xl font-black text-white">Todavía no está todo dicho...</p>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-white/75">
               Especialistas en llaves, inmovilizadores, ECUs, módulos electrónicos y diagnosis avanzada. Soluciones para particulares y talleres.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <a href="https://wa.me/34632982646" className="inline-flex items-center justify-center gap-3 rounded-xl bg-akred px-6 py-4 font-black uppercase shadow-2xl shadow-red-900/40 hover:bg-red-700">
+              <a href={whatsappUrl} className="inline-flex items-center justify-center gap-3 rounded-xl bg-akred px-6 py-4 font-black uppercase shadow-2xl shadow-red-900/40 hover:bg-red-700">
                 <MessageCircle /> Solicitar presupuesto
               </a>
               <a href="#talleres" className="inline-flex items-center justify-center gap-3 rounded-xl border border-white/25 bg-white/5 px-6 py-4 font-black uppercase hover:bg-white/10">
@@ -96,22 +96,19 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="card-glow rounded-3xl border border-white/10 bg-black/55 p-6 backdrop-blur">
+          <div className="rounded-3xl border border-white/10 bg-black/55 p-6 shadow-ak backdrop-blur">
             <div className="grid gap-4 sm:grid-cols-2">
               {[
-                [KeyRound, "Llaves e IMMO"],
-                [Cpu, "ECU y módulos"],
-                [Microscope, "Laboratorio"],
-                [Truck, "Servicio nacional"],
-              ].map(([Icon, text]) => {
-                const I = Icon as typeof KeyRound;
-                return (
-                  <div key={text as string} className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                    <I className="mb-4 text-akred" size={34} />
-                    <p className="font-black uppercase">{text as string}</p>
-                  </div>
-                );
-              })}
+                { Icon: KeyRound, text: "Llaves e IMMO" },
+                { Icon: Cpu, text: "ECU y módulos" },
+                { Icon: Microscope, text: "Laboratorio" },
+                { Icon: Truck, text: "Servicio nacional" },
+              ].map(({ Icon, text }) => (
+                <div key={text} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                  <Icon className="mb-4 text-akred" size={34} />
+                  <p className="font-black uppercase">{text}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -127,11 +124,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-            {[
-              "Diagnóstico profesional",
-              "Equipamiento avanzado",
-              "Resultados reales",
-            ].map((item) => (
+            {["Diagnóstico profesional", "Equipamiento avanzado", "Resultados reales"].map((item) => (
               <div key={item} className="flex items-center gap-3 rounded-xl border border-white/10 bg-black/40 p-4">
                 <CheckCircle2 className="text-akred" />
                 <span className="font-bold">{item}</span>
@@ -145,7 +138,7 @@ export default function Home() {
         <h2 className="text-center text-4xl font-black uppercase">Nuestros <span className="text-akred">servicios</span></h2>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map(({ icon: Icon, title, text }) => (
-            <article key={title} className="card-glow rounded-2xl border border-white/10 bg-white/[0.035] p-6 transition hover:-translate-y-1 hover:border-akred/70">
+            <article key={title} className="rounded-2xl border border-white/10 bg-white/[0.035] p-6 shadow-ak transition hover:-translate-y-1 hover:border-akred/70">
               <Icon size={38} className="text-akred" />
               <h3 className="mt-5 text-lg font-black uppercase">{title}</h3>
               <p className="mt-3 text-sm leading-6 text-white/65">{text}</p>
@@ -164,7 +157,7 @@ export default function Home() {
                   <p className="text-3xl font-black uppercase">{item.title}</p>
                 </div>
                 <div className="p-6">
-                  <p className="text-akred font-black uppercase">{item.problem}</p>
+                  <p className="font-black uppercase text-akred">{item.problem}</p>
                   <p className="mt-3 leading-7 text-white/70">{item.solution}</p>
                   <p className="mt-5 inline-flex items-center gap-2 font-black text-green-400"><CheckCircle2 size={20} /> Recuperado</p>
                 </div>
@@ -202,19 +195,12 @@ export default function Home() {
             <p className="mt-5 leading-8 text-white/70">
               Ofrecemos soluciones profesionales para talleres de toda España: file service, clonación, reparaciones electrónicas, programación de llaves e inmovilizadores.
             </p>
-            <a href="https://wa.me/34632982646" className="mt-8 inline-flex rounded-xl border border-akred px-6 py-4 font-black uppercase text-white hover:bg-akred">
+            <a href={whatsappUrl} className="mt-8 inline-flex rounded-xl border border-akred px-6 py-4 font-black uppercase text-white hover:bg-akred">
               Solicitar colaboración
             </a>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              "File Service",
-              "Clonación",
-              "Reparaciones",
-              "Llaves e IMMO",
-              "Soporte técnico",
-              "Servicio nacional",
-            ].map((item) => (
+            {["File Service", "Clonación", "Reparaciones", "Llaves e IMMO", "Soporte técnico", "Servicio nacional"].map((item) => (
               <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.035] p-5 text-center font-black uppercase">
                 {item}
               </div>
@@ -223,17 +209,26 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contacto" className="mx-auto max-w-7xl px-5 py-20">
+      <section id="contacto" className="mx-auto max-w-7xl px-5 py-16">
         <h2 className="text-4xl font-black uppercase">Cuéntanos tu <span className="text-akred">caso</span></h2>
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
-          <a href="https://wa.me/34632982646" className="rounded-2xl bg-green-600 p-6 font-black uppercase hover:bg-green-700"><Phone className="mb-4" /> WhatsApp<br />632 982 646</a>
-          <a href="mailto:info@autokeyspro.es" className="rounded-2xl border border-white/10 bg-white/[0.035] p-6 font-black uppercase hover:border-akred"><Mail className="mb-4 text-akred" /> Email<br />info@autokeyspro.es</a>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-6 font-black uppercase"><MapPin className="mb-4 text-akred" /> La Puerta de Segura<br />Jaén</div>
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
+          <a href={whatsappUrl} className="flex items-center gap-4 rounded-2xl bg-green-600 p-6 font-black uppercase hover:bg-green-700">
+            <Phone /> WhatsApp
+          </a>
+          <a href="mailto:info@autokeyspro.es" className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.035] p-6 font-black uppercase hover:border-akred">
+            <Mail /> Email
+          </a>
+          <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.035] p-6 font-black uppercase">
+            <MapPin className="text-akred" /> La Puerta de Segura, Jaén
+          </div>
         </div>
       </section>
 
-      <footer className="border-t border-white/10 bg-black px-5 py-8 text-center text-sm text-white/50">
-        © 2026 Autokeys Remaps Pro · Electrónica Avanzada del Automóvil · Todavía no está todo dicho...
+      <footer className="border-t border-white/10 bg-black px-5 py-10">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-white/55 md:flex-row md:items-center md:justify-between">
+          <p>© 2026 Autokeys Remaps Pro | Electrónica Avanzada del Automóvil</p>
+          <p>Todavía no está todo dicho...</p>
+        </div>
       </footer>
     </main>
   );

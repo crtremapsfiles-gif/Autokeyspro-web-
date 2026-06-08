@@ -1,213 +1,87 @@
-import {
-  AirVent,
-  BadgeCheck,
-  Box,
-  Car,
-  Cpu,
-  Headphones,
-  Instagram,
-  KeyRound,
-  Mail,
-  MapPin,
-  MessageCircle,
-  Mic2,
-  MonitorCog,
-  ShieldCheck,
-  Truck,
-  Wrench,
-  Youtube,
-  Zap,
-} from "lucide-react";
+const whatsappUrl = 'https://wa.me/34632982646';
+const mapsUrl = 'https://www.google.com/maps/search/?api=1&query=Av.+Andaluc%C3%ADa+125+BJ,+Puente+de+G%C3%A9nave,+Ja%C3%A9n';
 
-const whatsapp = "https://wa.me/34632982646";
-const maps = "https://www.google.com/maps/search/?api=1&query=Av.+Andaluc%C3%ADa+125+BJ,+Puente+de+G%C3%A9nave,+Ja%C3%A9n";
-
-const strip = [
-  { icon: KeyRound, label: "Llaves y\nSmart Keys" },
-  { icon: ShieldCheck, label: "Inmovilizadores" },
-  { icon: Cpu, label: "ECU / TCU\nAirbag / Módulos" },
-  { icon: Car, label: "BMW · Mercedes\nAudi · VAG" },
-  { icon: Mic2, label: "Laboratorio\nElectrónico" },
-  { icon: Truck, label: "Servicio nacional\npor envío" },
-];
-
-const services = [
-  {
-    icon: KeyRound,
-    title: "Llaves y Smart Keys",
-    bullets: ["Duplicado y pérdida total", "Mandos y smart keys", "Programación y reparación"],
-    image: "url('https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?auto=format&fit=crop&w=900&q=80')",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Inmovilizadores",
-    bullets: ["IMMO OFF / ON", "Adaptaciones", "Sincronizaciones"],
-    image: "url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=900&q=80')",
-  },
-  {
-    icon: Cpu,
-    title: "ECU / TCU / Módulos",
-    bullets: ["Lectura y escritura", "Clonación", "Reparación electrónica"],
-    image: "url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80')",
-  },
-  {
-    icon: Car,
-    title: "Mercedes EZS / ELV",
-    bullets: ["Reparación y clonación", "Adaptación", "Recuperación"],
-    image: "url('https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=900&q=80')",
-  },
-  {
-    icon: MonitorCog,
-    title: "BMW CAS / FEM / BDC",
-    bullets: ["Programación avanzada", "Diagnóstico", "Recuperaciones"],
-    image: "url('https://images.unsplash.com/photo-1556189250-72ba954cfc2b?auto=format&fit=crop&w=900&q=80')",
-  },
-  {
-    icon: AirVent,
-    title: "Airbag Crash Data",
-    bullets: ["Lectura crash", "Reset crash", "Reparación pretensores"],
-    image: "url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80')",
-  },
-];
-
-const cases = [
-  { car: "BMW Serie 1", problem: "FEM averiado", solution: "Clonación y programación", result: "Vehículo operativo", image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=80" },
-  { car: "Mercedes W204", problem: "EZS bloqueado", solution: "Reparación electrónica del EZS", result: "Arranque recuperado", image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=900&q=80" },
-  { car: "Opel Insignia", problem: "Actualización en concesionario", solution: "Diagnóstico y recuperación ECU", result: "Vehículo recuperado", image: "https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=900&q=80" },
-];
+function Hotspot({
+  href,
+  label,
+  style,
+}: {
+  href: string;
+  label: string;
+  style: React.CSSProperties;
+}) {
+  return (
+    <a
+      className="hotspot"
+      href={href}
+      aria-label={label}
+      title={label}
+      style={style}
+      target={href.startsWith('http') ? '_blank' : undefined}
+      rel={href.startsWith('http') ? 'noreferrer' : undefined}
+    />
+  );
+}
 
 export default function Home() {
   return (
-    <main>
-      <header className="topbar">
-        <a className="logo" href="#inicio" aria-label="Autokeys Remaps Pro">
-          <span className="ak">AK</span>
-          <span><b>AUTOKEYS</b><em>REMAPS PRO</em><small>electrónica avanzada del automóvil</small></span>
-        </a>
-        <nav>
-          <a className="active" href="#inicio">Inicio</a>
-          <a href="#servicios">Servicios</a>
-          <a href="#talleres">Talleres</a>
-          <a href="#casos">Casos reales</a>
-          <a href="#laboratorio">Laboratorio</a>
-          <a href="#nosotros">Sobre nosotros</a>
-          <a href="#contacto">Contacto</a>
-        </nav>
-        <div className="socials" aria-label="Redes sociales">
-          <a href="https://www.instagram.com/autokeys.pro" target="_blank" aria-label="Instagram"><Instagram /></a>
-          <a href="https://www.tiktok.com/@autokeys.pro" target="_blank" aria-label="TikTok"><span className="tk">♪</span></a>
-          <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube"><Youtube /></a>
-          <a href={whatsapp} target="_blank" aria-label="WhatsApp"><MessageCircle /></a>
-        </div>
-      </header>
+    <main className="page">
+      <div className="mockupWrap">
+        <img
+          src="/boceto-autokeys.jpg"
+          alt="Autokeys Remaps Pro - web premium de electrónica avanzada del automóvil"
+          className="mockup"
+        />
 
-      <section id="inicio" className="hero">
-        <div className="hero-bg" />
-        <div className="hero-shadow" />
-        <div className="hero-content">
-          <div className="hero-text">
-            <h1><span>AUTOKEYS</span><strong>REMAPS PRO</strong></h1>
-            <p className="subtitle">Electrónica avanzada del automóvil</p>
-            <span className="red-line" />
-            <h2>Especialistas en resolver<br />lo que otros <b>no pueden.</b></h2>
-            <div className="cta-row">
-              <a className="btn red" href={whatsapp} target="_blank"><MessageCircle /> Solicitar presupuesto<br/><small>por WhatsApp</small></a>
-              <a className="btn dark" href="#talleres"><Headphones /> Soy taller /<br/><small>distribuidor</small></a>
-            </div>
-          </div>
-          <div className="hero-car-card">
-            <div className="wall-logo"><span>AK</span><b>Autokeys Remaps Pro</b></div>
-          </div>
-        </div>
-      </section>
+        {/* Menú superior */}
+        <Hotspot href="#inicio" label="Inicio" style={{ left: '40%', top: '2.5%', width: '5%', height: '3%' }} />
+        <Hotspot href="#servicios" label="Servicios" style={{ left: '46%', top: '2.5%', width: '7%', height: '3%' }} />
+        <Hotspot href="#talleres" label="Talleres" style={{ left: '54%', top: '2.5%', width: '7%', height: '3%' }} />
+        <Hotspot href="#casos" label="Casos reales" style={{ left: '62%', top: '2.5%', width: '9%', height: '3%' }} />
+        <Hotspot href="#laboratorio" label="Laboratorio" style={{ left: '72%', top: '2.5%', width: '9%', height: '3%' }} />
+        <Hotspot href="#contacto" label="Contacto" style={{ left: '89%', top: '2.5%', width: '8%', height: '3%' }} />
 
-      <section className="feature-strip">
-        {strip.map((item) => <article key={item.label}><item.icon /><span>{item.label}</span></article>)}
-      </section>
+        {/* Redes */}
+        <Hotspot href="https://www.instagram.com/autokeys.pro" label="Instagram Autokeys" style={{ left: '91.5%', top: '.6%', width: '2.3%', height: '2%' }} />
+        <Hotspot href="https://www.tiktok.com/@autokeys.pro" label="TikTok Autokeys" style={{ left: '94.2%', top: '.6%', width: '2.3%', height: '2%' }} />
+        <Hotspot href="https://www.youtube.com/" label="YouTube Autokeys" style={{ left: '96.6%', top: '.6%', width: '2.3%', height: '2%' }} />
 
-      <section id="nosotros" className="not-normal">
-        <div className="copy">
-          <h2><b>No somos</b> un taller convencional</h2>
-          <p>En Autokeys Remaps Pro trabajamos sobre averías electrónicas, inmovilizadores, módulos, llaves y centralitas donde muchos talleres se detienen.</p>
-          <strong>Diagnosticamos, reparamos, clonamos, programamos y recuperamos sistemas electrónicos del automóvil.</strong>
-        </div>
-        <div className="pcb-photo" />
-      </section>
+        {/* Botones principales */}
+        <Hotspot href={whatsappUrl} label="Solicitar presupuesto por WhatsApp" style={{ left: '3%', top: '22%', width: '21.5%', height: '4%' }} />
+        <Hotspot href="#talleres" label="Soy taller o distribuidor" style={{ left: '26%', top: '22%', width: '17%', height: '4%' }} />
 
-      <section id="servicios" className="services-section">
-        <h2>Nuestros <b>servicios</b></h2>
-        <div className="services-grid">
-          {services.map((s) => (
-            <article className="service-card" key={s.title}>
-              <div className="service-img" style={{ backgroundImage: s.image }} />
-              <s.icon className="badge-icon" />
-              <h3>{s.title}</h3>
-              <ul>{s.bullets.map((b) => <li key={b}>{b}</li>)}</ul>
-            </article>
-          ))}
-        </div>
-      </section>
+        {/* Barra servicios */}
+        <Hotspot href="#servicios" label="Llaves y Smart Keys" style={{ left: '2.5%', top: '28.2%', width: '14%', height: '4%' }} />
+        <Hotspot href="#servicios" label="Inmovilizadores" style={{ left: '17.3%', top: '28.2%', width: '17%', height: '4%' }} />
+        <Hotspot href="#servicios" label="ECU TCU Airbag y módulos" style={{ left: '35%', top: '28.2%', width: '17%', height: '4%' }} />
+        <Hotspot href="#servicios" label="BMW Mercedes Audi VAG" style={{ left: '53%', top: '28.2%', width: '17%', height: '4%' }} />
+        <Hotspot href="#laboratorio" label="Laboratorio electrónico" style={{ left: '70.5%', top: '28.2%', width: '15%', height: '4%' }} />
+        <Hotspot href="#contacto" label="Servicio nacional por envío" style={{ left: '86%', top: '28.2%', width: '12%', height: '4%' }} />
 
-      <section id="talleres" className="workshops">
-        <div>
-          <h2>¿Eres taller?<br/><b>Trabajamos contigo.</b></h2>
-          <p>File service, clonación de módulos, reparaciones electrónicas, programación de llaves, soporte técnico y servicio nacional para profesionales.</p>
-          <a className="outline" href={whatsapp} target="_blank">Solicitar alta como taller colaborador</a>
-        </div>
-        <div className="workshop-items">
-          {[
-            [Truck, "Servicio nacional por envío"],
-            [Headphones, "Soporte técnico rápido y profesional"],
-            [BadgeCheck, "Trabajos con garantía"],
-            [Zap, "Precios especiales para talleres"],
-          ].map(([Icon, text]) => <article key={String(text)}>{typeof Icon !== "string" && <Icon />}<span>{String(text)}</span></article>)}
-        </div>
-        <div className="toolcase">AK<br/><span>Autokeys Remaps Pro</span></div>
-      </section>
+        {/* Secciones invisibles para anclajes */}
+        <span id="inicio" className="anchor" style={{ top: 0 }} />
+        <span id="servicios" className="anchor" style={{ top: '44%' }} />
+        <span id="talleres" className="anchor" style={{ top: '59%' }} />
+        <span id="casos" className="anchor" style={{ top: '71%' }} />
+        <span id="laboratorio" className="anchor" style={{ top: '84%' }} />
+        <span id="contacto" className="anchor" style={{ top: '95%' }} />
 
-      <section id="casos" className="cases">
-        <h2>Casos <b>reales</b></h2>
-        <div className="case-grid">
-          {cases.map((c) => (
-            <article key={c.car} className="case-card">
-              <img src={c.image} alt={c.car} />
-              <div>
-                <h3>{c.car}</h3>
-                <p><b>Problema:</b> {c.problem}</p>
-                <p><b>Solución:</b> {c.solution}</p>
-                <p className="green"><b>Resultado:</b> {c.result}</p>
-              </div>
-            </article>
-          ))}
-          <article className="case-help">
-            <h3>¿Tienes un caso complicado?</h3>
-            <p>Envíanos la información y estudiamos tu caso sin compromiso.</p>
-            <a href={whatsapp} target="_blank"><MessageCircle /> Contactar por WhatsApp</a>
-          </article>
-        </div>
-      </section>
+        {/* Tarjetas servicios/casos/contacto */}
+        <Hotspot href="#servicios" label="Ver servicio Llaves" style={{ left: '2.5%', top: '45%', width: '15%', height: '13%' }} />
+        <Hotspot href="#servicios" label="Ver servicio Inmovilizadores" style={{ left: '18.2%', top: '45%', width: '15%', height: '13%' }} />
+        <Hotspot href="#servicios" label="Ver servicio ECU" style={{ left: '34%', top: '45%', width: '15%', height: '13%' }} />
+        <Hotspot href="#servicios" label="Ver Mercedes EZS ELV" style={{ left: '49.7%', top: '45%', width: '15%', height: '13%' }} />
+        <Hotspot href="#servicios" label="Ver BMW CAS FEM BDC" style={{ left: '65.5%', top: '45%', width: '15%', height: '13%' }} />
+        <Hotspot href="#servicios" label="Ver Airbag Crash Data" style={{ left: '81.3%', top: '45%', width: '15%', height: '13%' }} />
 
-      <section id="laboratorio" className="lab">
-        <h2>Nuestro <b>laboratorio</b></h2>
-        <div className="lab-grid">
-          <div className="lab-img big" />
-          <div className="lab-img one" />
-          <div className="lab-img two" />
-          <div className="lab-copy">
-            <p>Contamos con equipamiento profesional para diagnóstico, reparación y programación de sistemas electrónicos del automóvil.</p>
-            <strong>No cambiamos piezas por probar. Diagnosticamos y reparamos con criterio técnico.</strong>
-          </div>
-        </div>
-      </section>
+        <Hotspot href="#talleres" label="Solicitar alta como taller colaborador" style={{ left: '2.6%', top: '63.6%', width: '21%', height: '4%' }} />
+        <Hotspot href={whatsappUrl} label="Contactar por WhatsApp" style={{ left: '83.2%', top: '76.5%', width: '13%', height: '5%' }} />
+        <Hotspot href={whatsappUrl} label="WhatsApp" style={{ left: '43%', top: '94%', width: '14%', height: '4%' }} />
+        <Hotspot href="mailto:info@autokeyspro.es" label="Enviar email" style={{ left: '58%', top: '94%', width: '18%', height: '4%' }} />
+        <Hotspot href={mapsUrl} label="Cómo llegar" style={{ left: '2%', top: '92.8%', width: '25%', height: '5%' }} />
 
-      <footer id="contacto">
-        <div className="foot-card"><MapPin /><span><b>Autokeys Remaps Pro</b><small>Av. Andalucía 125 BJ, Puente de Génave, Jaén</small></span></div>
-        <div className="foot-card"><MessageCircle /><span><b>WhatsApp</b><small>632 982 646</small></span></div>
-        <div className="foot-card"><Mail /><span><b>Email</b><small>info@autokeyspro.es</small></span></div>
-        <a className="map-card" href={maps} target="_blank">Cómo llegar</a>
-        <div className="footer-socials"><Instagram /><span>♪</span><Youtube /><MessageCircle /></div>
-      </footer>
-      <a className="floating-wa" href={whatsapp} target="_blank" aria-label="WhatsApp"><MessageCircle /></a>
+        <a className="floatingWhatsapp" href={whatsappUrl} target="_blank" rel="noreferrer" aria-label="WhatsApp Autokeys">WhatsApp</a>
+      </div>
     </main>
   );
 }

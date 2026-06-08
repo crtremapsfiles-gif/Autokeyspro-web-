@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Autokeys Remaps Pro | Electrónica Avanzada del Automóvil',
-  description: 'Laboratorio de electrónica avanzada del automóvil. Llaves, IMMO, ECU, módulos, airbag y servicio nacional para particulares y talleres.',
+  title: 'Autokeys Remaps Pro | Electrónica avanzada del automóvil',
+  description: 'Laboratorio de electrónica avanzada del automóvil en Puente de Génave, Jaén. Llaves, IMMO, ECU, Airbag, BMW, Mercedes, Audi y VAG.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -1,47 +1,19 @@
-import {
-  Airplay,
-  Briefcase,
-  Car,
-  CheckCircle2,
-  Cpu,
-  Gauge,
-  Instagram,
-  KeyRound,
-  Mail,
-  MapPin,
-  Microscope,
-  Phone,
-  ShieldCheck,
-  Truck,
-  Wrench,
-  Youtube,
-} from 'lucide-react';
-
 const whatsapp = 'https://wa.me/34632982646';
-const maps = 'https://www.google.com/maps/search/?api=1&query=Av.+Andalucia+125+Bj,+Puente+de+Genave,+Jaen';
-
-const strip = [
-  { icon: KeyRound, title: 'Llaves y\nSmart Keys' },
-  { icon: ShieldCheck, title: 'Inmovilizadores' },
-  { icon: Cpu, title: 'ECU / TCU\nAirbag / Módulos' },
-  { icon: Car, title: 'BMW · Mercedes\nAudi · VAG' },
-  { icon: Microscope, title: 'Laboratorio\nelectrónico' },
-  { icon: Truck, title: 'Servicio nacional\npor envío' },
-];
+const maps = 'https://www.google.com/maps/search/?api=1&query=Av.+Andalucia+125+BJ+Puente+de+Genave+Jaen';
 
 const services = [
-  { icon: KeyRound, title: 'Llaves y\nSmart Keys', text: 'Duplicado, pérdida total, mandos, programación y reparación.' },
-  { icon: ShieldCheck, title: 'Inmovilizadores', text: 'Sincronización, adaptación, desactivación, recuperación de sistemas IMMO.' },
-  { icon: Cpu, title: 'ECU / TCU /\nMódulos', text: 'Clonación, reparación, programación y venta de centralitas y módulos.' },
-  { icon: Gauge, title: 'Mercedes\nEZS / ELV', text: 'Reparación, clonación y recuperación de sistemas Mercedes.' },
-  { icon: Car, title: 'BMW\nCAS / FEM / BDC', text: 'Programación, clonación y diagnóstico avanzado de módulos BMW.' },
-  { icon: Airplay, title: 'Airbag\nCrash Data', text: 'Reset crash, reparación de centralitas de airbag y pretensores.' },
+  { icon: '🔑', title: 'Llaves y Smart Keys', text: 'Duplicado, pérdida total, mandos, programación y reparación.' },
+  { icon: '🛡️', title: 'Inmovilizadores', text: 'Sincronización, adaptación, recuperación y sistemas IMMO.' },
+  { icon: '⚙️', title: 'ECU / TCU / Módulos', text: 'Lectura, clonación, programación y reparación electrónica.' },
+  { icon: '⭐', title: 'Mercedes EZS / ELV', text: 'Reparación, clonación y recuperación de sistemas Mercedes.' },
+  { icon: '⭕', title: 'BMW CAS / FEM / BDC', text: 'Programación, diagnóstico avanzado y recuperación.' },
+  { icon: '💥', title: 'Airbag Crash Data', text: 'Reset crash, reparación de centralitas y pretensores.' },
 ];
 
 const cases = [
-  { car: 'BMW Serie 1', issue: 'No arranca', problem: 'FEM averiado', solution: 'Clonación y programación.', result: 'Vehículo operativo' },
-  { car: 'Mercedes W204', issue: 'EZS bloqueado', problem: 'No gira llave', solution: 'Reparación electrónica del EZS.', result: 'Arranque recuperado' },
-  { car: 'Opel Insignia', issue: 'Sin arranque', problem: 'Actualización en concesionario, ECU sin arranque.', solution: 'Diagnóstico y recuperación ECU.', result: 'Vehículo recuperado' },
+  { title: 'BMW Serie 1', issue: 'No arranca', solution: 'FEM averiado · vehículo recuperado', image: 'https://images.unsplash.com/photo-1556189250-72ba954cfc2b?auto=format&fit=crop&w=900&q=80' },
+  { title: 'Mercedes W204', issue: 'EZS bloqueado', solution: 'Sistema recuperado · arranque restaurado', image: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=900&q=80' },
+  { title: 'Opel Insignia', issue: 'Sin arranque', solution: 'Diagnóstico ECU · vehículo operativo', image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=900&q=80' },
 ];
 
 export default function Home() {
@@ -50,99 +22,108 @@ export default function Home() {
       <header className="topbar">
         <a className="brand" href="#inicio" aria-label="Autokeys Remaps Pro">
           <span className="ak">AK</span>
-          <span className="brandText"><b>Autokeys</b><em>Remaps Pro</em><small>Electrónica avanzada del automóvil</small></span>
+          <span><b>AUTOKEYS</b><em>REMAPS PRO</em><small>Electrónica avanzada del automóvil</small></span>
         </a>
-        <nav className="menu">
-          <a className="active" href="#inicio">Inicio</a>
+        <nav>
+          <a href="#inicio">Inicio</a>
           <a href="#servicios">Servicios</a>
           <a href="#talleres">Talleres</a>
           <a href="#casos">Casos reales</a>
           <a href="#laboratorio">Laboratorio</a>
-          <a href="#nosotros">Sobre nosotros</a>
           <a href="#contacto">Contacto</a>
         </nav>
-        <div className="socials"><Instagram size={16}/><span>TikTok</span><Youtube size={17}/><span>☏</span></div>
+        <div className="social"><span>◎</span><span>♪</span><span>▶</span><span>☏</span></div>
       </header>
 
       <section id="inicio" className="hero">
-        <div className="heroText">
-          <h1><span>Autokeys</span><strong>Remaps Pro</strong></h1>
-          <p className="subtitle">Electrónica avanzada del automóvil</p>
-          <div className="redline" />
-          <h2>Especialistas en resolver<br/>lo que otros <span>no pueden.</span></h2>
-          <div className="heroButtons">
-            <a className="btn primary" href={whatsapp} target="_blank" rel="noreferrer">Solicitar presupuesto<br/>por WhatsApp</a>
-            <a className="btn secondary" href="#talleres"><Briefcase size={21}/> Soy taller /<br/>distribuidor</a>
+        <div className="heroShade" />
+        <div className="container heroGrid">
+          <div className="heroText">
+            <h1><span>AUTOKEYS</span><strong>REMAPS PRO</strong></h1>
+            <p className="sub">Electrónica avanzada del automóvil</p>
+            <div className="line" />
+            <h2>Especialistas en resolver<br />lo que otros <b>no pueden.</b></h2>
+            <div className="actions">
+              <a className="btn primary" href={whatsapp} target="_blank">☏ Solicitar presupuesto por WhatsApp</a>
+              <a className="btn ghost" href="#talleres">▣ Soy taller / distribuidor</a>
+            </div>
           </div>
-        </div>
-        <div className="heroScene" aria-hidden="true">
-          <div className="wallLogo"><span>AK</span><b>Autokeys</b><em>Remaps Pro</em></div>
-          <div className="screen screenA" />
-          <div className="screen screenB" />
-          <div className="carGlow" />
-          <div className="carBody">
-            <div className="windshield" />
-            <div className="headlight left" />
-            <div className="headlight right" />
-            <div className="grille" />
-            <div className="wheel front" />
-            <div className="wheel rear" />
+          <div className="carStage">
+            <div className="wallLogo"><span>AK</span><b>AUTOKEYS</b><em>REMAPS PRO</em></div>
           </div>
         </div>
       </section>
 
-      <section className="serviceStrip">
-        {strip.map(({ icon: Icon, title }) => <a href="#servicios" key={title}><Icon size={30}/><span>{title}</span></a>)}
+      <section className="serviceRail">
+        <a href="#servicios">🔑<span>Llaves y<br/>Smart Keys</span></a>
+        <a href="#servicios">🛡️<span>Inmovilizadores</span></a>
+        <a href="#servicios">⚙️<span>ECU / TCU<br/>Airbag / Módulos</span></a>
+        <a href="#servicios">🚗<span>BMW · Mercedes<br/>Audi · VAG</span></a>
+        <a href="#laboratorio">🔬<span>Laboratorio<br/>electrónico</span></a>
+        <a href="#contacto">📦<span>Servicio nacional<br/>por envío</span></a>
       </section>
 
-      <section id="nosotros" className="notWorkshop sectionSplit">
-        <div className="copy">
-          <h3><span>No somos</span> un taller convencional</h3>
-          <p>En Autokeys Remaps Pro trabajamos sobre averías electrónicas, inmovilizadores, módulos, llaves y centralitas donde muchos talleres se detienen.</p>
-          <p className="red">Diagnosticamos, reparamos, clonamos, programamos y recuperamos sistemas electrónicos del automóvil.</p>
-        </div>
-        <div className="pcb"><div className="chip"/><span/><span/><span/><span/></div>
-      </section>
-
-      <section id="servicios" className="services">
-        <h3>Nuestros <span>servicios</span></h3>
-        <div className="cards">
-          {services.map(({ icon: Icon, title, text }) => <article className="card" key={title}><div className="photo"><Icon size={54}/></div><h4>{title}</h4><p>{text}</p></article>)}
-        </div>
-      </section>
-
-      <section id="talleres" className="proArea">
-        <div>
-          <h3>¿Eres taller?<br/><span>Trabajamos contigo.</span></h3>
-          <p>File service, clonación de módulos, reparaciones electrónicas, programación de llaves, soporte técnico y servicios profesionales para talleres.</p>
-          <a className="outlineBtn" href={whatsapp} target="_blank" rel="noreferrer">Solicitar alta como taller colaborador</a>
-        </div>
-        <div className="proIcons">
-          <span><Truck/> Servicio nacional por envío</span><span><Phone/> Soporte técnico rápido</span><span><CheckCircle2/> Trabajos con garantía</span><span><Gauge/> Precios especiales para talleres</span>
-        </div>
-        <div className="caseBox"><b>AK</b><small>Autokeys Remaps Pro</small></div>
-      </section>
-
-      <section id="casos" className="cases">
-        <h3>Casos <span>reales</span></h3>
-        <div className="caseGrid">
-          {cases.map((c) => <article className="caseCard" key={c.car}><div className="caseImage"><Car size={60}/></div><div><h4>{c.car}</h4><b>{c.issue}</b><p><span>Problema:</span> {c.problem}</p><p><span>Solución:</span> {c.solution}</p><p><span>Resultado:</span> {c.result}</p></div><button>+</button></article>)}
-          <article className="contactCase"><h4>¿Tienes un caso complicado?</h4><p>Envíanos la información y estudiamos tu caso sin compromiso.</p><a href={whatsapp} target="_blank" rel="noreferrer">Contactar por WhatsApp</a></article>
+      <section className="split pcb">
+        <div className="container splitGrid">
+          <div>
+            <h2><b>No somos</b> un taller convencional</h2>
+            <p>En Autokeys Remaps Pro trabajamos sobre averías electrónicas, inmovilizadores, módulos, llaves y centralitas donde muchos talleres se detienen.</p>
+            <p className="red">Diagnosticamos, reparamos, clonamos, programamos y recuperamos sistemas electrónicos del automóvil.</p>
+          </div>
+          <div className="pcbPhoto" />
         </div>
       </section>
 
-      <section id="laboratorio" className="lab">
-        <h3>Nuestro <span>laboratorio</span></h3>
-        <div className="labGrid"><div className="labShot wide"/><div className="labShot microscope"/><div className="labShot autel"/><aside><p>Contamos con equipamiento profesional para el diagnóstico, reparación y programación de sistemas electrónicos del automóvil.</p><b>No cambiamos piezas por probar. Diagnosticamos y reparamos con criterio técnico.</b></aside></div>
+      <section id="servicios" className="container section">
+        <h2 className="center">Nuestros <b>servicios</b></h2>
+        <div className="cards servicesCards">
+          {services.map((s) => <article className="card" key={s.title}><div className="serviceIcon">{s.icon}</div><h3>{s.title}</h3><p>{s.text}</p></article>)}
+        </div>
+      </section>
+
+      <section id="talleres" className="talleres">
+        <div className="container talleresGrid">
+          <div>
+            <h2>¿Eres taller?<br/><b>Trabajamos contigo.</b></h2>
+            <p>File service, clonación de módulos, reparaciones electrónicas, programación de llaves, soporte técnico y servicio nacional para profesionales.</p>
+            <a className="btn ghost" href={whatsapp} target="_blank">▣ Solicitar alta como taller colaborador</a>
+          </div>
+          <div className="tallerBullets">
+            <span>🚚 Servicio nacional por envío</span><span>🎧 Soporte técnico rápido</span><span>🛡️ Trabajos con garantía</span><span>📈 Precios especiales para talleres</span>
+          </div>
+          <div className="caseBox"><span>AK</span><b>AUTOKEYS</b><em>REMAPS PRO</em></div>
+        </div>
+      </section>
+
+      <section id="casos" className="container section casesSection">
+        <h2>Casos <b>reales</b></h2>
+        <div className="casesGrid">
+          {cases.map((c) => <article className="case" key={c.title}><div className="caseImg" style={{ backgroundImage: `url(${c.image})` }} /><div><h3>{c.title}</h3><b>{c.issue}</b><p>{c.solution}</p><small>Resultado: vehículo recuperado.</small></div><a href={whatsapp} target="_blank">+</a></article>)}
+          <article className="case ctaCase"><h3>¿Tienes un caso complicado?</h3><p>Envíanos la información y estudiamos tu caso sin compromiso.</p><a className="btn primary" href={whatsapp} target="_blank">☏ Contactar por WhatsApp</a></article>
+        </div>
+      </section>
+
+      <section id="laboratorio" className="container lab">
+        <h2>Nuestro <b>laboratorio</b></h2>
+        <div className="labGrid">
+          <div className="labImg big" />
+          <div className="labImg microscope" />
+          <div className="labImg diag" />
+          <div className="labText"><p>Contamos con equipamiento profesional para diagnosis, reparación y programación de sistemas electrónicos del automóvil.</p><b>No cambiamos piezas por probar.<br/>Diagnosticamos y reparamos con criterio técnico.</b></div>
+        </div>
       </section>
 
       <footer id="contacto" className="footer">
-        <div><MapPin/><b>Autokeys Remaps Pro</b><small>Av. Andalucía 125 BJ<br/>Puente de Génave, Jaén</small></div>
-        <div><Phone/><b>WhatsApp</b><a href={whatsapp} target="_blank" rel="noreferrer">632 982 646</a></div>
-        <div><Mail/><b>Email</b><a href="mailto:info@autokeyspro.es">info@autokeyspro.es</a></div>
-        <div><MapPin/><b>Ubicación</b><a href={maps} target="_blank" rel="noreferrer">Cómo llegar</a></div>
+        <div className="container footerGrid">
+          <div><h3>Autokeys Remaps Pro</h3><p><a href={maps} target="_blank">📍 av. andalucía 125 bj, puente de génave, jaén</a></p></div>
+          <div><h3>Horario</h3><p>lunes a viernes<br/>9:00 - 14:00 | 16:00 - 20:00</p></div>
+          <div><h3>WhatsApp</h3><p><a href={whatsapp} target="_blank">☏ escribirnos</a></p></div>
+          <div><h3>Email</h3><p><a href="mailto:info@autokeyspro.es"><i><b>info@autokeyspro.es</b></i></a></p></div>
+          <div><h3>Síguenos</h3><p>◎ ♪ ▶ ☏</p></div>
+        </div>
+        <small>© 2026 Autokeys Remaps Pro | Electrónica Avanzada del Automóvil</small>
       </footer>
-      <a className="floatingWhatsapp" href={whatsapp} target="_blank" rel="noreferrer">WhatsApp</a>
+      <a className="float" href={whatsapp} target="_blank">☏</a>
     </main>
   );
 }

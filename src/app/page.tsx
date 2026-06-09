@@ -42,7 +42,7 @@ const cases = [
     problem: 'Sin arranque tras actualización',
     solution: 'Diagnóstico y recuperación ECU',
     result: 'Vehículo operativo',
-    img: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=85'
+    img: 'https://bb-folien.com/cache/bbfolien/105-1560646_235656059947361_1126934637_n-3c68ca3eee2e04d6.jpg'
   },
 ];
 

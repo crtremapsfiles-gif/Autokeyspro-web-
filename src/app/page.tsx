@@ -17,7 +17,7 @@ const services = [
   { icon: '🔑', title: 'Llaves y Smart Keys', img: 'https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?auto=format&fit=crop&w=900&q=80', text: 'Duplicado, pérdida total, mandos, programación y reparación.' },
   { icon: '🛡️', title: 'Inmovilizadores', img: 'https://autel.com/au/wp-content/themes/autel/u/cms/www/202112/011843327zp5.jpg', text: 'Sincronización, adaptación, recuperación y soluciones IMMO.' },
   { icon: '🧠', title: 'ECU / TCU / Módulos', img: 'https://www.magicmotorsport.com/wp-content/uploads/2025/05/Flex-sw.webp', text: 'Lectura, escritura, clonación, reparación y recuperación de centralitas.' },
-  { icon: '⭐', title: 'Mercedes EZS / ELV', img: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=900&q=80', text: 'EZS, ELV, llaves y recuperación de sistemas Mercedes.' },
+  { icon: '⭐', title: 'Mercedes EZS / ELV', img: 'https://assets.carandclassic.com/uploads/new/25807715/Screenshot-2025-11-04-at-10.29.49.png?fit=fillmax&h=800&ixlib=php-4.1.0&q=85&w=800&s=1c070fa4270d600bb3f197f49031fae8', text: 'EZS, ELV, llaves y recuperación de sistemas Mercedes.' },
   { icon: '🔴', title: 'BMW CAS / FEM / BDC', img: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=80', text: 'Diagnóstico, programación avanzada y recuperación de módulos BMW.' },
   { icon: '💥', title: 'Airbag Crash Data', img: 'https://www.alientech-tools.com/wp-content/uploads/2022/03/GALLERY_1.png', text: 'Crash Data, reset, reparación de centralitas airbag y pretensores.' },
 ];

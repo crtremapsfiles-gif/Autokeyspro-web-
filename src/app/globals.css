@@ -124,3 +124,10 @@
  color:#ff3b30 !important;
  font-weight:700;
 }
+
+
+.fileServiceBtn, .btn-file-service{
+ color:#fff !important;
+ font-weight:700 !important;
+ opacity:1 !important;
+}

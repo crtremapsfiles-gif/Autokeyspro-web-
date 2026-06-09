@@ -1,3 +1,4 @@
+import { FaInstagram, FaTiktok, FaYoutube, FaWhatsapp } from "react-icons/fa";
 const phone = '632982646';
 const whatsapp = `https://wa.me/34${phone}?text=Hola%20Autokeys%20Remaps%20Pro,%20quiero%20solicitar%20presupuesto`;
 const maps = 'https://www.google.com/maps/search/?api=1&query=Av.+Andaluc%C3%ADa+125+BJ,+Puente+de+G%C3%A9nave,+Ja%C3%A9n';
@@ -63,10 +64,10 @@ export default function Home() {
           <a href="#contacto">Contacto</a>
         </nav>
         <div className="socials" aria-label="Redes sociales">
-          <a href="https://instagram.com/autokeys.pro" target="_blank">◎</a>
-          <a href="https://tiktok.com/@autokeys.pro" target="_blank">♪</a>
-          <a href="https://youtube.com" target="_blank">▶</a>
-          <a href={whatsapp} target="_blank">☏</a>
+          <a href="https://instagram.com/autokeys.pro" target="_blank"><FaInstagram /></a>
+          <a href="https://tiktok.com/@autokeys.pro" target="_blank"><FaTiktok /></a>
+          <a href="https://youtube.com/@autokeyspro" target="_blank"><FaYoutube /></a>
+          <a href={whatsapp} target="_blank"><FaWhatsapp /></a>
         </div>
       </header>
 
@@ -224,7 +225,7 @@ export default function Home() {
         <div className="footBox"><b>Ubicación</b><a href={maps} target="_blank">Cómo llegar</a></div>
       </footer>
 
-      <a className="floatingWhatsapp" href={whatsapp} target="_blank" aria-label="WhatsApp">☏</a>
+      <a className="floatingWhatsapp" href={whatsapp} target="_blank" aria-label="WhatsApp" ><FaWhatsapp /></a>
     </main>
   );
 }

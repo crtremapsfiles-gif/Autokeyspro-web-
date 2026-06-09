@@ -126,8 +126,74 @@
 }
 
 
-.fileServiceBtn, .btn-file-service{
- color:#fff !important;
- font-weight:700 !important;
- opacity:1 !important;
+/* Corrección definitiva de botones principales */
+.stackBtn{
+  display:inline-flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:4px !important;
+  min-width:230px !important;
+  min-height:72px !important;
+  padding:16px 24px !important;
+  text-align:center !important;
+  white-space:normal !important;
+}
+
+.stackBtn span{
+  display:block !important;
+  font-size:14px !important;
+  line-height:1.05 !important;
+  letter-spacing:.2px !important;
+  color:#fff !important;
+}
+
+.stackBtn small{
+  display:block !important;
+  font-size:11px !important;
+  line-height:1.05 !important;
+  color:#fff !important;
+  opacity:.98 !important;
+}
+
+.btn.primary,
+.workshopActions .btn.primary,
+.fileServicePanel .btn.primary{
+  background:linear-gradient(135deg,#e1251b,#ff4b21) !important;
+  color:#fff !important;
+  border:1px solid #ff563a !important;
+  opacity:1 !important;
+  text-shadow:0 1px 2px rgba(0,0,0,.45) !important;
+}
+
+.btn.dark{
+  color:#fff !important;
+  background:rgba(0,0,0,.68) !important;
+  border:1px solid rgba(255,255,255,.38) !important;
+}
+
+.btn.fileBtn{
+  color:#fff !important;
+  background:linear-gradient(135deg,rgba(0,0,0,.82),rgba(38,12,8,.92)) !important;
+  border:1px solid #ff3b30 !important;
+  box-shadow:0 0 0 1px rgba(255,59,48,.18),0 18px 45px rgba(0,0,0,.38) !important;
+}
+
+.workshopActions .btn,
+.fileServicePanel .btn{
+  color:#fff !important;
+  opacity:1 !important;
+  font-weight:1000 !important;
+}
+
+.fileServicePanel .btn.primary{
+  min-width:260px !important;
+  text-align:center !important;
+  justify-content:center !important;
+}
+
+/* File Service destacado en menú */
+nav a[href*="tunersuite"]{
+  color:#ff3b30 !important;
+  font-weight:1000 !important;
 }

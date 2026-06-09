@@ -81,9 +81,18 @@ export default function Home() {
             <h2>Especialistas en resolver<br />lo que otros <span>no pueden.</span></h2>
             <p className="lead">Llaves, inmovilizadores, ECUs, módulos electrónicos, airbag, diagnosis avanzada y recuperación de sistemas para particulares y talleres.</p>
             <div className="ctaRow">
-              <a className="btn primary" href={whatsapp} target="_blank">☏ Solicitar presupuesto<br /><small>por WhatsApp</small></a>
-              <a className="btn dark" href="#talleres">▣ Soy taller /<br /><small>distribuidor</small></a>
-              <a className="btn fileBtn" href={fileService} target="_blank" rel="noopener noreferrer">⚡ Acceso<br /><small>File Service</small></a>
+              <a className="btn primary stackBtn" href={whatsapp} target="_blank" rel="noopener noreferrer">
+                <span>☎ Solicitar presupuesto</span>
+                <small>Por WhatsApp</small>
+              </a>
+              <a className="btn dark stackBtn" href="#talleres">
+                <span>▣ Área profesional</span>
+                <small>Talleres y Talleres y distribuidoreses</small>
+              </a>
+              <a className="btn fileBtn stackBtn" href={fileService} target="_blank" rel="noopener noreferrer">
+                <span>⚡ Acceso</span>
+                <small>File Service</small>
+              </a>
             </div>
           </div>
           <div className="carBadge">
@@ -145,7 +154,7 @@ export default function Home() {
           <div>
             <p className="eyebrow">Plataforma 24h para profesionales</p>
             <h2>File Service <span>profesional</span></h2>
-            <p>Acceso directo para talleres y distribuidores: solicitudes online, soporte técnico y servicios de calibración electrónica.</p>
+            <p>Acceso directo para talleres y Talleres y distribuidoreses: solicitudes online, soporte técnico y servicios de calibración electrónica.</p>
           </div>
           <div className="fileServicesList">
             <span>Stage 1</span>

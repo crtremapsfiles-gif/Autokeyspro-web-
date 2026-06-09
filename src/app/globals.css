@@ -83,3 +83,37 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Ajuste premium redes sociales */
+.socials a {
+  font-size: 24px;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: color .25s ease, transform .25s ease, filter .25s ease;
+}
+
+.socials a:hover {
+  color: #ff3b30;
+  transform: translateY(-2px);
+  filter: drop-shadow(0 0 8px rgba(255, 59, 48, .45));
+}
+
+.floatingWhatsapp {
+  font-size: 30px;
+  width: 64px;
+  height: 64px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 28px rgba(37, 211, 102, .45);
+}
+
+.floatingWhatsapp svg {
+  width: 34px;
+  height: 34px;
+}

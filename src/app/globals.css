@@ -117,3 +117,10 @@
   width: 34px;
   height: 34px;
 }
+
+
+/* Mejoras finales */
+.fileServiceLink, a[href*="tunersuite"]{
+ color:#ff3b30 !important;
+ font-weight:700;
+}

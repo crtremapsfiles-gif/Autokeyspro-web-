@@ -35,7 +35,7 @@ const cases = [
     problem: 'EZS bloqueado · sin giro de llave',
     solution: 'Reparación electrónica del EZS',
     result: 'Arranque recuperado',
-    img: 'https://images.unsplash.com/photo-1617814076668-4adcb5b2b652?auto=format&fit=crop&w=1200&q=85'
+    img: 'https://i.ytimg.com/vi/IeO5AR8DmGs/sddefault.jpg?sqp=-oaymwEmCIAFEOAD8quKqQMa8AEB-AGmA4AC4AOKAgwIABABGGUgVihNMA8=&rs=AOn4CLDxE4Kh_FgJHnUhmjwZ0t31izNmVg'
   },
   {
     car: 'Opel Insignia',

@@ -21,9 +21,27 @@ const services = [
 ];
 
 const cases = [
-  { car: 'BMW Serie 1', problem: 'FEM averiado · no arranca', solution: 'Clonación y programación', result: 'Vehículo recuperado', img: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=80' },
-  { car: 'Mercedes W204', problem: 'EZS bloqueado', solution: 'Reparación electrónica del EZS', result: 'Arranque recuperado', img: 'https://images.unsplash.com/photo-1617814076668-4adcb5b2b652?auto=format&fit=crop&w=900&q=80' },
-  { car: 'Opel Insignia', problem: 'Sin arranque tras actualización', solution: 'Diagnóstico y recuperación ECU', result: 'Vehículo operativo', img: 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=900&q=80' },
+  {
+    car: 'BMW Serie 1 F20',
+    problem: 'FEM averiado · no arranca',
+    solution: 'Clonación y programación FEM',
+    result: 'Vehículo recuperado',
+    img: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=85'
+  },
+  {
+    car: 'Mercedes W204',
+    problem: 'EZS bloqueado · sin giro de llave',
+    solution: 'Reparación electrónica del EZS',
+    result: 'Arranque recuperado',
+    img: 'https://images.unsplash.com/photo-1617814076668-4adcb5b2b652?auto=format&fit=crop&w=1200&q=85'
+  },
+  {
+    car: 'Opel Insignia',
+    problem: 'Sin arranque tras actualización',
+    solution: 'Diagnóstico y recuperación ECU',
+    result: 'Vehículo operativo',
+    img: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=85'
+  },
 ];
 
 export default function Home() {

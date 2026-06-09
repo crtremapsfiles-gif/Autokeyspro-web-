@@ -87,7 +87,7 @@ export default function Home() {
               </a>
               <a className="btn dark stackBtn" href="#talleres">
                 <span>▣ Área profesional</span>
-                <small>Talleres y Talleres y distribuidoreses</small>
+                <small>Talleres y distribuidores</small>
               </a>
               <a className="btn fileBtn stackBtn" href={fileService} target="_blank" rel="noopener noreferrer">
                 <span>⚡ Acceso</span>

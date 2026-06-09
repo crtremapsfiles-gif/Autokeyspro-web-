@@ -137,16 +137,34 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="laboratorio" className="lab">
-        <div className="labPhotos">
-          <div className="lab1" />
-          <div className="lab2" />
-          <div className="lab3" />
+      <section id="laboratorio" className="lab equipmentLab">
+        <div className="labPhotos toolPhotos">
+          <article className="labTool lab1">
+            <div className="toolOverlay">
+              <span>01</span>
+              <h3>Autel IM608 Pro</h3>
+              <p>Llaves · IMMO · codificación avanzada</p>
+            </div>
+          </article>
+          <article className="labTool lab2">
+            <div className="toolOverlay">
+              <span>02</span>
+              <h3>Magic Motorsport Flex</h3>
+              <p>OBD · Bench · Boot · clonación ECU/TCU</p>
+            </div>
+          </article>
+          <article className="labTool lab3">
+            <div className="toolOverlay">
+              <span>03</span>
+              <h3>Alientech KESS3</h3>
+              <p>Reprogramación profesional · Stage · optimización</p>
+            </div>
+          </article>
         </div>
         <div className="labText">
-          <h2>Nuestro <span>laboratorio</span></h2>
-          <p>Equipamiento profesional para diagnosis, reparación y programación de sistemas electrónicos del automóvil.</p>
-          <strong>No cambiamos piezas por probar. Diagnosticamos y reparamos con criterio técnico.</strong>
+          <h2>Equipamiento <span>profesional</span></h2>
+          <p>Herramientas de referencia para diagnosis, programación, lectura, escritura, clonación y recuperación de sistemas electrónicos del automóvil.</p>
+          <strong>Autel IM608 Pro · Magic Motorsport Flex · Alientech KESS3. Tecnología profesional al servicio de cada diagnóstico.</strong>
         </div>
       </section>
 

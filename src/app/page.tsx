@@ -1,6 +1,7 @@
 const phone = '632982646';
 const whatsapp = `https://wa.me/34${phone}?text=Hola%20Autokeys%20Remaps%20Pro,%20quiero%20solicitar%20presupuesto`;
 const maps = 'https://www.google.com/maps/search/?api=1&query=Av.+Andaluc%C3%ADa+125+BJ,+Puente+de+G%C3%A9nave,+Ja%C3%A9n';
+const fileService = 'https://autokeysremapspro.tunersuite.com/client/login';
 
 const heroItems = [
   ['🔑', 'Llaves y\nSmart Keys'],
@@ -58,6 +59,7 @@ export default function Home() {
           <a href="#talleres">Talleres</a>
           <a href="#casos">Casos reales</a>
           <a href="#laboratorio">Laboratorio</a>
+          <a href={fileService} target="_blank" rel="noopener noreferrer">File Service</a>
           <a href="#contacto">Contacto</a>
         </nav>
         <div className="socials" aria-label="Redes sociales">
@@ -80,6 +82,7 @@ export default function Home() {
             <div className="ctaRow">
               <a className="btn primary" href={whatsapp} target="_blank">☏ Solicitar presupuesto<br /><small>por WhatsApp</small></a>
               <a className="btn dark" href="#talleres">▣ Soy taller /<br /><small>distribuidor</small></a>
+              <a className="btn fileBtn" href={fileService} target="_blank" rel="noopener noreferrer">⚡ Acceso<br /><small>File Service</small></a>
             </div>
           </div>
           <div className="carBadge">
@@ -123,13 +126,37 @@ export default function Home() {
         <div>
           <h2>¿Eres taller?<br /><span>Trabajamos contigo.</span></h2>
           <p>File service, clonación de módulos, reparaciones electrónicas, programación de llaves, soporte técnico y servicio nacional para profesionales.</p>
-          <a className="btn outline" href={whatsapp} target="_blank">Solicitar alta como taller colaborador</a>
+          <div className="workshopActions">
+            <a className="btn outline" href={whatsapp} target="_blank">Solicitar alta como taller colaborador</a>
+            <a className="btn primary" href={fileService} target="_blank" rel="noopener noreferrer">Acceder al File Service</a>
+          </div>
         </div>
         <div className="workshopGrid">
           <span>🚚<b>Servicio nacional por envío</b></span>
           <span>🎧<b>Soporte técnico profesional</b></span>
           <span>🛡️<b>Trabajos con garantía</b></span>
           <span>📈<b>Precios especiales para talleres</b></span>
+        </div>
+      </section>
+
+      <section id="fileservice" className="fileServiceSection">
+        <div className="fileServicePanel">
+          <div>
+            <p className="eyebrow">Plataforma 24h para profesionales</p>
+            <h2>File Service <span>profesional</span></h2>
+            <p>Acceso directo para talleres y distribuidores: solicitudes online, soporte técnico y servicios de calibración electrónica.</p>
+          </div>
+          <div className="fileServicesList">
+            <span>Stage 1</span>
+            <span>Stage 2</span>
+            <span>DPF OFF</span>
+            <span>EGR OFF</span>
+            <span>AdBlue OFF</span>
+            <span>DTC OFF</span>
+            <span>IMMO OFF</span>
+            <span>Soporte técnico</span>
+          </div>
+          <a className="btn primary" href={fileService} target="_blank" rel="noopener noreferrer">Acceder a la plataforma</a>
         </div>
       </section>
 
@@ -193,6 +220,7 @@ export default function Home() {
         </div>
         <div className="footBox"><b>WhatsApp</b><a href={whatsapp} target="_blank">632 982 646</a></div>
         <div className="footBox"><b>Email</b><a href="mailto:info@autokeyspro.es">info@autokeyspro.es</a></div>
+        <div className="footBox"><b>File Service</b><a href={fileService} target="_blank" rel="noopener noreferrer">Acceso talleres 24h</a></div>
         <div className="footBox"><b>Ubicación</b><a href={maps} target="_blank">Cómo llegar</a></div>
       </footer>
 

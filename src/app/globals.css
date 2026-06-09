@@ -3,3 +3,83 @@
 /* Equipamiento profesional Autokeys */
 .equipmentLab{align-items:stretch}.toolPhotos{min-height:310px}.labTool{position:relative;overflow:hidden;border-radius:8px;background-size:cover!important;background-position:center!important;min-height:310px;box-shadow:0 24px 65px rgba(0,0,0,.55);transition:.35s}.labTool:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.03) 0%,rgba(0,0,0,.18) 38%,rgba(0,0,0,.9) 100%),radial-gradient(circle at 15% 10%,rgba(225,37,27,.45),transparent 28%);z-index:1}.labTool:hover{transform:translateY(-6px);border-color:#e1251b}.labTool:hover:before{background:linear-gradient(180deg,rgba(0,0,0,.02) 0%,rgba(0,0,0,.12) 35%,rgba(0,0,0,.88) 100%),radial-gradient(circle at 15% 10%,rgba(255,50,31,.55),transparent 30%)}.toolOverlay{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:18px 18px 20px;text-transform:uppercase}.toolOverlay span{display:inline-flex;border:1px solid rgba(255,255,255,.25);color:#ff3b2e;border-radius:999px;font-size:11px;font-weight:1000;padding:5px 9px;margin-bottom:10px;background:rgba(0,0,0,.45)}.toolOverlay h3{margin:0 0 7px;font-size:17px;line-height:1.05;font-weight:1000;color:#fff}.toolOverlay p{margin:0;color:#e8e8e8;font-size:12px;line-height:1.35;font-weight:800}.lab1{background-image:url('https://autel.com/au/wp-content/themes/autel/u/cms/www/202112/011843327zp5.jpg')!important}.lab2{background-image:url('https://www.magicmotorsport.com/wp-content/uploads/2025/05/Flex-sw.webp')!important}.lab3{background-image:url('https://www.alientech-tools.com/wp-content/uploads/2022/03/GALLERY_1.png')!important;background-color:#070707!important;background-size:contain!important;background-repeat:no-repeat!important}.equipmentLab .labText{background:linear-gradient(180deg,#101010,#070707);border:1px solid rgba(255,255,255,.12);padding:26px;border-radius:8px;box-shadow:0 24px 65px rgba(0,0,0,.35)}
 @media(max-width:620px){.labTool{min-height:260px}.toolPhotos{min-height:auto}}
+
+
+/* File Service integration */
+.fileBtn {
+  border: 1px solid rgba(255, 59, 31, .75);
+  background: linear-gradient(135deg, rgba(255,59,31,.16), rgba(15,15,18,.94));
+  color: #fff;
+}
+
+.workshopActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.fileServiceSection {
+  padding: 70px 5vw;
+  background:
+    radial-gradient(circle at 80% 30%, rgba(255, 59, 31, .18), transparent 32%),
+    linear-gradient(135deg, #08090c, #121217 55%, #07070a);
+}
+
+.fileServicePanel {
+  max-width: 1180px;
+  margin: 0 auto;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 28px;
+  padding: 34px;
+  background: rgba(255,255,255,.045);
+  box-shadow: 0 25px 90px rgba(0,0,0,.45);
+  display: grid;
+  grid-template-columns: 1.1fr 1.3fr auto;
+  gap: 28px;
+  align-items: center;
+}
+
+.fileServicePanel .eyebrow {
+  color: #ff3b1f;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .78rem;
+  margin-bottom: 8px;
+}
+
+.fileServicePanel h2 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: .95;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+}
+
+.fileServicePanel h2 span { color: #ff3b1f; }
+
+.fileServicePanel p {
+  color: rgba(255,255,255,.72);
+  margin: 0;
+}
+
+.fileServicesList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.fileServicesList span {
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 14px;
+  padding: 12px 14px;
+  background: rgba(0,0,0,.28);
+  color: #fff;
+  font-weight: 800;
+}
+
+@media (max-width: 900px) {
+  .fileServicePanel {
+    grid-template-columns: 1fr;
+  }
+}

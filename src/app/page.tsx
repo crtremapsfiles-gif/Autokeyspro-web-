@@ -2,7 +2,8 @@ import { FaInstagram, FaTiktok, FaYoutube, FaWhatsapp } from "react-icons/fa";
 const phone = '632982646';
 const whatsapp = `https://wa.me/34${phone}?text=Hola%20Autokeys%20Remaps%20Pro,%20quiero%20solicitar%20presupuesto`;
 const maps = 'https://www.google.com/maps/search/?api=1&query=Av.+Andaluc%C3%ADa+125+BJ,+Puente+de+G%C3%A9nave,+Ja%C3%A9n';
-const fileService = 'https://autokeysremapspro.tunersuite.com/client/login';
+const fileService = 'https://akcloud.es/login';
+const akCloudRegister = 'https://akcloud.es/register';
 
 const heroItems = [
   ['🔑', 'Llaves y\nSmart Keys'],
@@ -49,6 +50,35 @@ const cases = [
 export default function Home() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'AutoRepair',
+            name: 'Autokeys Remaps Pro',
+            url: 'https://autokeyspro.es',
+            image: 'https://autokeyspro.es/og-image.png',
+            telephone: '+34632982646',
+            email: 'info@autokeyspro.es',
+            description:
+              'Laboratorio especializado en llaves, inmovilizadores, ECUs, módulos electrónicos, airbag y diagnosis avanzada para particulares y talleres.',
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: 'Av. Andalucía, 125 BJ',
+              addressLocality: 'Puente de Génave',
+              addressRegion: 'Jaén',
+              postalCode: '23350',
+              addressCountry: 'ES',
+            },
+            sameAs: [
+              'https://instagram.com/autokeys.pro',
+              'https://tiktok.com/@autokeys.pro',
+              'https://youtube.com/@autokeyspro',
+            ],
+          }),
+        }}
+      />
       <header className="topbar">
         <a className="brand" href="#inicio" aria-label="Autokeys Remaps Pro">
           <span className="ak">AK</span>
@@ -100,6 +130,17 @@ export default function Home() {
             <b>Autokeys</b>
             <strong>Remaps Pro</strong>
           </div>
+          <div className="scanOverlay">
+            <span className="scanTag">Análisis en tiempo real</span>
+            <div className="scanCorner tl" />
+            <div className="scanCorner tr" />
+            <div className="scanCorner bl" />
+            <div className="scanCorner br" />
+            <div className="scanLine" />
+            <div className="scanPin p1"><span className="dot" /><span className="lbl">ECU / TCU<small>Diagnóstico OK</small></span></div>
+            <div className="scanPin p2"><span className="dot" /><span className="lbl">Airbag<small>Sistema OK</small></span></div>
+            <div className="scanPin p3"><span className="dot" /><span className="lbl">Inmovilizador<small>Sincronizado</small></span></div>
+          </div>
         </div>
       </section>
 
@@ -137,7 +178,7 @@ export default function Home() {
           <h2>¿Eres taller?<br /><span>Trabajamos contigo.</span></h2>
           <p>File service, clonación de módulos, reparaciones electrónicas, programación de llaves, soporte técnico y servicio nacional para profesionales.</p>
           <div className="workshopActions">
-            <a className="btn outline" href={whatsapp} target="_blank">Solicitar alta como taller colaborador</a>
+            <a className="btn outline" href={akCloudRegister} target="_blank" rel="noopener noreferrer">Solicitar alta como taller colaborador</a>
             <a className="btn primary" href={fileService} target="_blank" rel="noopener noreferrer">Acceder al File Service</a>
           </div>
         </div>
@@ -154,7 +195,7 @@ export default function Home() {
           <div>
             <p className="eyebrow">Plataforma 24h para profesionales</p>
             <h2>File Service <span>profesional</span></h2>
-            <p>Acceso directo para talleres y Talleres y distribuidoreses: solicitudes online, soporte técnico y servicios de calibración electrónica.</p>
+            <p>Acceso directo para talleres y distribuidores: solicitudes online, soporte técnico y servicios de calibración electrónica.</p>
           </div>
           <div className="fileServicesList">
             <span>Stage 1</span>

@@ -1,3 +1,5 @@
+'use client';
+import { useEffect } from "react";
 import { FaInstagram, FaTiktok, FaYoutube, FaWhatsapp } from "react-icons/fa";
 const phone = '632982646';
 const whatsapp = `https://wa.me/34${phone}?text=Hola%20Autokeys%20Remaps%20Pro,%20quiero%20solicitar%20presupuesto`;
@@ -48,6 +50,23 @@ const cases = [
 ];
 
 export default function Home() {
+  useEffect(() => {
+    const els = document.querySelectorAll<HTMLElement>('.reveal');
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
   return (
     <main>
       <script
@@ -150,7 +169,13 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="notWorkshop">
+      <section className="statsBar reveal">
+        <div><b>14+</b><span>Años de experiencia</span></div>
+        <div><b>+6.500</b><span>Casos resueltos</span></div>
+        <div><b>+9.870</b><span>Soluciones propias (WinOLS)</span></div>
+      </section>
+
+      <section className="notWorkshop reveal">
         <div>
           <h2><span>No somos</span> un taller convencional</h2>
           <p>En Autokeys Remaps Pro trabajamos sobre averías electrónicas, inmovilizadores, módulos, llaves y centralitas donde muchos talleres se detienen.</p>
@@ -159,7 +184,7 @@ export default function Home() {
         <div className="pcb" />
       </section>
 
-      <section id="servicios" className="section">
+      <section id="servicios" className="section reveal">
         <h2>Nuestros <span>servicios</span></h2>
         <div className="cards services">
           {services.map((s) => (
@@ -173,7 +198,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="talleres" className="workshops">
+      <section id="talleres" className="workshops reveal">
         <div>
           <h2>¿Eres taller?<br /><span>Trabajamos contigo.</span></h2>
           <p>File service, clonación de módulos, reparaciones electrónicas, programación de llaves, soporte técnico y servicio nacional para profesionales.</p>
@@ -190,7 +215,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="fileservice" className="fileServiceSection">
+      <section id="fileservice" className="fileServiceSection reveal">
         <div className="fileServicePanel">
           <div>
             <p className="eyebrow">Plataforma 24h para profesionales</p>
@@ -211,7 +236,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="casos" className="section casesSection">
+      <section id="casos" className="section casesSection reveal">
         <h2>Casos <span>reales</span></h2>
         <div className="cards caseCards">
           {cases.map((c) => (
@@ -233,7 +258,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="laboratorio" className="lab equipmentLab">
+      <section id="laboratorio" className="lab equipmentLab reveal">
         <div className="labPhotos toolPhotos">
           <article className="labTool lab1">
             <div className="toolOverlay">
@@ -264,7 +289,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer id="contacto">
+      <footer id="contacto" className="reveal">
         <div className="footBox">
           <b>Autokeys Remaps Pro</b>
           <span>📍 Av. Andalucía 125 BJ, Puente de Génave, Jaén</span>

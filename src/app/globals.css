@@ -18,6 +18,22 @@
 .scanPin.p2{top:48%;right:6%;flex-direction:row-reverse}
 .scanPin.p3{top:74%;left:20%}
 @media(max-width:1000px){.scanOverlay{display:none}}
+
+/* Barra de cifras de confianza */
+.statsBar{width:min(1400px,94vw);margin:26px auto 0;display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg,#0d0d0d,#070707);box-shadow:0 25px 70px rgba(0,0,0,.5)}
+.statsBar>div{padding:30px 18px;text-align:center;border-right:1px solid rgba(255,255,255,.1)}
+.statsBar>div:last-child{border-right:0}
+.statsBar b{display:block;font-size:clamp(34px,4vw,52px);font-weight:1000;font-style:italic;line-height:1;background:linear-gradient(135deg,#fff,#fff 55%,#e1251b 56%,#e1251b);-webkit-background-clip:text;color:transparent}
+.statsBar span{display:block;margin-top:8px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:#ccc}
+@media(max-width:1000px){.statsBar{grid-template-columns:1fr}.statsBar>div{border-right:0;border-bottom:1px solid rgba(255,255,255,.1)}.statsBar>div:last-child{border-bottom:0}}
+
+/* Aparición suave al hacer scroll */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal.show{opacity:1;transform:translateY(0)}
+.reveal-1{transition-delay:.08s}
+.reveal-2{transition-delay:.16s}
+.reveal-3{transition-delay:.24s}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 .equipmentLab{align-items:stretch}.toolPhotos{min-height:310px}.labTool{position:relative;overflow:hidden;border-radius:8px;background-size:cover!important;background-position:center!important;min-height:310px;box-shadow:0 24px 65px rgba(0,0,0,.55);transition:.35s}.labTool:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.03) 0%,rgba(0,0,0,.18) 38%,rgba(0,0,0,.9) 100%),radial-gradient(circle at 15% 10%,rgba(225,37,27,.45),transparent 28%);z-index:1}.labTool:hover{transform:translateY(-6px);border-color:#e1251b}.labTool:hover:before{background:linear-gradient(180deg,rgba(0,0,0,.02) 0%,rgba(0,0,0,.12) 35%,rgba(0,0,0,.88) 100%),radial-gradient(circle at 15% 10%,rgba(255,50,31,.55),transparent 30%)}.toolOverlay{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:18px 18px 20px;text-transform:uppercase}.toolOverlay span{display:inline-flex;border:1px solid rgba(255,255,255,.25);color:#ff3b2e;border-radius:999px;font-size:11px;font-weight:1000;padding:5px 9px;margin-bottom:10px;background:rgba(0,0,0,.45)}.toolOverlay h3{margin:0 0 7px;font-size:17px;line-height:1.05;font-weight:1000;color:#fff}.toolOverlay p{margin:0;color:#e8e8e8;font-size:12px;line-height:1.35;font-weight:800}.lab1{background-image:url('https://autel.com/au/wp-content/themes/autel/u/cms/www/202112/011843327zp5.jpg')!important}.lab2{background-image:url('https://www.magicmotorsport.com/wp-content/uploads/2025/05/Flex-sw.webp')!important}.lab3{background-image:url('https://www.alientech-tools.com/wp-content/uploads/2022/03/GALLERY_1.png')!important;background-color:#070707!important;background-size:contain!important;background-repeat:no-repeat!important}.equipmentLab .labText{background:linear-gradient(180deg,#101010,#070707);border:1px solid rgba(255,255,255,.12);padding:26px;border-radius:8px;box-shadow:0 24px 65px rgba(0,0,0,.35)}
 @media(max-width:620px){.labTool{min-height:260px}.toolPhotos{min-height:auto}}
 

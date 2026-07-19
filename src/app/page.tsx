@@ -7,22 +7,50 @@ const maps = 'https://www.google.com/maps/search/?api=1&query=Av.+Andaluc%C3%ADa
 const fileService = 'https://akcloud.es/login';
 const akCloudRegister = 'https://akcloud.es/register';
 
-const heroItems = [
-  ['🔑', 'Llaves y\nSmart Keys'],
-  ['🛡️', 'Inmovilizadores'],
-  ['🧠', 'ECU / TCU\nAirbag / Módulos'],
-  ['🚘', 'BMW · Mercedes\nAudi · VAG'],
-  ['🔬', 'Laboratorio\nElectrónico'],
-  ['📦', 'Servicio nacional\npor envío'],
+type IconName = 'key' | 'shield' | 'cpu' | 'star' | 'target' | 'alert' | 'truck' | 'headset' | 'shieldCheck' | 'trend';
+
+function Icon({ name }: { name: IconName }) {
+  const common = { width: 22, height: 22, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };
+  switch (name) {
+    case 'key':
+      return <svg {...common}><circle cx="7.5" cy="15.5" r="4.5" /><path d="M11 12 20 3M16 8l3-3M13 11l2 2" /></svg>;
+    case 'shield':
+      return <svg {...common}><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" /><path d="M9.5 12l2 2 3.5-4" /></svg>;
+    case 'cpu':
+      return <svg {...common}><rect x="6" y="6" width="12" height="12" rx="1.5" /><path d="M9 6V3M15 6V3M9 21v-3M15 21v-3M6 9H3M6 15H3M21 9h-3M21 15h-3" /><rect x="9.5" y="9.5" width="5" height="5" rx="0.5" /></svg>;
+    case 'star':
+      return <svg {...common}><path d="M12 3l2.4 5.8 6.1.5-4.7 4 1.5 6-5.3-3.3-5.3 3.3 1.5-6-4.7-4 6.1-.5L12 3z" /></svg>;
+    case 'target':
+      return <svg {...common}><circle cx="12" cy="12" r="8" /><circle cx="12" cy="12" r="4" /><circle cx="12" cy="12" r=".6" fill="currentColor" /></svg>;
+    case 'alert':
+      return <svg {...common}><path d="M12 3l10 18H2L12 3z" /><path d="M12 10v4" /><circle cx="12" cy="17" r=".6" fill="currentColor" /></svg>;
+    case 'truck':
+      return <svg {...common}><rect x="2" y="7" width="12" height="9" rx="1" /><path d="M14 10h4l3 3v3h-7z" /><circle cx="6.5" cy="18" r="1.6" /><circle cx="16.5" cy="18" r="1.6" /></svg>;
+    case 'headset':
+      return <svg {...common}><path d="M4 13v-1a8 8 0 0116 0v1" /><rect x="2.5" y="13" width="4" height="6" rx="1.3" /><rect x="17.5" y="13" width="4" height="6" rx="1.3" /><path d="M19.5 19v.5a3 3 0 01-3 3H13" /></svg>;
+    case 'shieldCheck':
+      return <svg {...common}><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" /><path d="M9.5 12l2 2 3.5-4" /></svg>;
+    case 'trend':
+      return <svg {...common}><path d="M3 17l6-6 4 4 8-8" /><path d="M15 7h6v6" /></svg>;
+  }
+}
+
+const heroItems: [IconName, string][] = [
+  ['key', 'Llaves y\nSmart Keys'],
+  ['shield', 'Inmovilizadores'],
+  ['cpu', 'ECU / TCU\nAirbag / Módulos'],
+  ['star', 'BMW · Mercedes\nAudi · VAG'],
+  ['target', 'Laboratorio\nElectrónico'],
+  ['truck', 'Servicio nacional\npor envío'],
 ];
 
-const services = [
-  { icon: '🔑', title: 'Llaves y Smart Keys', text: 'Duplicado, pérdida total, mandos, programación y reparación.' },
-  { icon: '🛡️', title: 'Inmovilizadores', text: 'Sincronización, adaptación, recuperación y soluciones IMMO.' },
-  { icon: '🧠', title: 'ECU / TCU / Módulos', text: 'Lectura, escritura, clonación, reparación y recuperación de centralitas.' },
-  { icon: '⭐', title: 'Mercedes EZS / ELV', text: 'EZS, ELV, llaves y recuperación de sistemas Mercedes.' },
-  { icon: '🔴', title: 'BMW CAS / FEM / BDC', text: 'Diagnóstico, programación avanzada y recuperación de módulos BMW.' },
-  { icon: '💥', title: 'Airbag Crash Data', text: 'Crash Data, reset, reparación de centralitas airbag y pretensores.' },
+const services: { icon: IconName; title: string; text: string }[] = [
+  { icon: 'key', title: 'Llaves y Smart Keys', text: 'Duplicado, pérdida total, mandos, programación y reparación.' },
+  { icon: 'shield', title: 'Inmovilizadores', text: 'Sincronización, adaptación, recuperación y soluciones IMMO.' },
+  { icon: 'cpu', title: 'ECU / TCU / Módulos', text: 'Lectura, escritura, clonación, reparación y recuperación de centralitas.' },
+  { icon: 'star', title: 'Mercedes EZS / ELV', text: 'EZS, ELV, llaves y recuperación de sistemas Mercedes.' },
+  { icon: 'target', title: 'BMW CAS / FEM / BDC', text: 'Diagnóstico, programación avanzada y recuperación de módulos BMW.' },
+  { icon: 'alert', title: 'Airbag Crash Data', text: 'Crash Data, reset, reparación de centralitas airbag y pretensores.' },
 ];
 
 const cases = [
@@ -178,7 +206,7 @@ export default function Home() {
 
       <section className="serviceStrip">
         {heroItems.map(([icon, label]) => (
-          <a key={label} href="#servicios"><span>{icon}</span><b>{label}</b></a>
+          <a key={label} href="#servicios"><span><Icon name={icon} /></span><b>{label}</b></a>
         ))}
       </section>
 
@@ -186,6 +214,14 @@ export default function Home() {
         <div><b>14+</b><span>Años de experiencia</span></div>
         <div><b>+6.500</b><span>Casos resueltos</span></div>
         <div><b>+9.870</b><span>Soluciones propias (WinOLS)</span></div>
+      </section>
+
+      <section className="testimonial reveal">
+        <div className="stars">★★★★★</div>
+        <blockquote>
+          “Llevé mis dos vehículos, el mío y el de mi esposa, y nos hicieron un duplicado de llave. Muy contentos con el servicio y la atención. Fueron súper rápidos, en menos de una hora ya teníamos los dos vehículos listos. Totalmente recomendables.”
+        </blockquote>
+        <cite>— Pablo, reseña verificada en Google</cite>
       </section>
 
       <section className="notWorkshop reveal">
@@ -202,7 +238,7 @@ export default function Home() {
         <div className="cards services">
           {services.map((s) => (
             <article className="card serviceCard" key={s.title}>
-              <div className="serviceIcon">{s.icon}</div>
+              <div className="serviceIcon"><Icon name={s.icon} /></div>
               <h3>{s.title}</h3>
               <p>{s.text}</p>
             </article>
@@ -220,10 +256,10 @@ export default function Home() {
           </div>
         </div>
         <div className="workshopGrid">
-          <span>🚚<b>Servicio nacional por envío</b></span>
-          <span>🎧<b>Soporte técnico profesional</b></span>
-          <span>🛡️<b>Trabajos con garantía</b></span>
-          <span>📈<b>Precios especiales para talleres</b></span>
+          <span><Icon name="truck" /><b>Servicio nacional por envío</b></span>
+          <span><Icon name="headset" /><b>Soporte técnico profesional</b></span>
+          <span><Icon name="shieldCheck" /><b>Trabajos con garantía</b></span>
+          <span><Icon name="trend" /><b>Precios especiales para talleres</b></span>
         </div>
       </section>
 

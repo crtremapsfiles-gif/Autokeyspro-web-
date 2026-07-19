@@ -97,7 +97,7 @@ nav a.akCloudLink{color:var(--red)}
 .serviceStrip{position:relative;z-index:2;margin:40px auto 0;width:min(1400px,94vw);display:grid;grid-template-columns:repeat(6,1fr);background:var(--glass);border:1px solid var(--glass-b);border-radius:14px;overflow:hidden;backdrop-filter:blur(14px)}
 .serviceStrip a{min-height:82px;display:flex;align-items:center;gap:14px;padding:16px 18px;border-right:1px solid var(--glass-b);transition:.25s}
 .serviceStrip a:hover{background:rgba(226,51,80,.08)}
-.serviceStrip span{font-size:28px;filter:grayscale(.3)}
+.serviceStrip span{color:var(--red);display:flex}
 .serviceStrip b{white-space:pre-line;font-size:12px;line-height:1.25;text-transform:uppercase;color:var(--muted);font-family:var(--font-mono)}
 
 /* ===== Stats ===== */
@@ -107,7 +107,13 @@ nav a.akCloudLink{color:var(--red)}
 .statsBar span{display:block;margin-top:8px;font-size:10.5px;font-weight:400;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-family:var(--font-mono)}
 @media(max-width:1000px){.statsBar{grid-template-columns:1fr}}
 
-.notWorkshop{display:grid;grid-template-columns:1fr 1.15fr;width:min(1400px,94vw);margin:70px auto 0;border-bottom:1px solid var(--glass-b);min-height:220px}
+/* ===== Reseña — momento distintivo, no es otra tarjeta más ===== */
+.testimonial{width:min(900px,88vw);margin:80px auto 0;text-align:center;position:relative;z-index:2}
+.testimonial .stars{color:var(--red);font-size:20px;letter-spacing:4px;margin-bottom:26px}
+.testimonial blockquote{margin:0;font-family:var(--font-display);font-weight:500;font-size:clamp(1.3rem,2.6vw,1.9rem);line-height:1.45;color:var(--text);letter-spacing:-.01em}
+.testimonial cite{display:block;margin-top:26px;font-style:normal;font-family:var(--font-mono);font-size:12.5px;color:var(--muted)}
+
+.notWorkshop{display:grid;grid-template-columns:1fr 1.15fr;width:min(1400px,94vw);margin:80px auto 0;border-bottom:1px solid var(--glass-b);min-height:220px}
 .notWorkshop>div:first-child{padding:54px 42px}
 .notWorkshop h2,.section h2,.workshops h2,.labText h2{font-family:var(--font-display);font-weight:600;font-size:30px;line-height:1.15;text-transform:none;margin:0 0 22px;color:var(--text)}
 .notWorkshop h2 span,.section h2 span,.workshops h2 span,.labText h2 span{color:var(--red)}
@@ -130,7 +136,7 @@ nav a.akCloudLink{color:var(--red)}
 .workshops p{color:var(--muted);line-height:1.6;max-width:600px}
 .outline{background:transparent!important;border:1px solid var(--red)!important;color:var(--text)!important;margin-top:15px}
 .workshopGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--glass-b);border-radius:12px;overflow:hidden}
-.workshopGrid span{background:rgba(10,11,13,.6);min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;font-size:26px}
+.workshopGrid span{background:rgba(10,11,13,.6);min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;color:var(--red)}
 .workshopGrid b{font-size:11px;text-transform:uppercase;line-height:1.3;color:var(--muted);font-weight:400;font-family:var(--font-mono)}
 
 .caseCards{grid-template-columns:repeat(4,1fr)}

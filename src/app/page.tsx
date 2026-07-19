@@ -17,12 +17,12 @@ const heroItems = [
 ];
 
 const services = [
-  { icon: '🔑', title: 'Llaves y Smart Keys', img: 'https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?auto=format&fit=crop&w=900&q=80', text: 'Duplicado, pérdida total, mandos, programación y reparación.' },
-  { icon: '🛡️', title: 'Inmovilizadores', img: 'https://autel.com/au/wp-content/themes/autel/u/cms/www/202112/011843327zp5.jpg', text: 'Sincronización, adaptación, recuperación y soluciones IMMO.' },
-  { icon: '🧠', title: 'ECU / TCU / Módulos', img: 'https://www.magicmotorsport.com/wp-content/uploads/2025/05/Flex-sw.webp', text: 'Lectura, escritura, clonación, reparación y recuperación de centralitas.' },
-  { icon: '⭐', title: 'Mercedes EZS / ELV', img: 'https://assets.carandclassic.com/uploads/new/25807715/Screenshot-2025-11-04-at-10.29.49.png?fit=fillmax&h=800&ixlib=php-4.1.0&q=85&w=800&s=1c070fa4270d600bb3f197f49031fae8', text: 'EZS, ELV, llaves y recuperación de sistemas Mercedes.' },
-  { icon: '🔴', title: 'BMW CAS / FEM / BDC', img: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=80', text: 'Diagnóstico, programación avanzada y recuperación de módulos BMW.' },
-  { icon: '💥', title: 'Airbag Crash Data', img: 'https://www.alientech-tools.com/wp-content/uploads/2022/03/GALLERY_1.png', text: 'Crash Data, reset, reparación de centralitas airbag y pretensores.' },
+  { icon: '🔑', title: 'Llaves y Smart Keys', text: 'Duplicado, pérdida total, mandos, programación y reparación.' },
+  { icon: '🛡️', title: 'Inmovilizadores', text: 'Sincronización, adaptación, recuperación y soluciones IMMO.' },
+  { icon: '🧠', title: 'ECU / TCU / Módulos', text: 'Lectura, escritura, clonación, reparación y recuperación de centralitas.' },
+  { icon: '⭐', title: 'Mercedes EZS / ELV', text: 'EZS, ELV, llaves y recuperación de sistemas Mercedes.' },
+  { icon: '🔴', title: 'BMW CAS / FEM / BDC', text: 'Diagnóstico, programación avanzada y recuperación de módulos BMW.' },
+  { icon: '💥', title: 'Airbag Crash Data', text: 'Crash Data, reset, reparación de centralitas airbag y pretensores.' },
 ];
 
 const cases = [
@@ -31,21 +31,18 @@ const cases = [
     problem: 'FEM averiado · no arranca',
     solution: 'Clonación y programación FEM',
     result: 'Vehículo recuperado',
-    img: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=85'
   },
   {
     car: 'Mercedes W204',
     problem: 'EZS bloqueado · sin giro de llave',
     solution: 'Reparación electrónica del EZS',
     result: 'Arranque recuperado',
-    img: 'https://i.ytimg.com/vi/IeO5AR8DmGs/sddefault.jpg?sqp=-oaymwEmCIAFEOAD8quKqQMa8AEB-AGmA4AC4AOKAgwIABABGGUgVihNMA8=&rs=AOn4CLDxE4Kh_FgJHnUhmjwZ0t31izNmVg'
   },
   {
     car: 'Opel Insignia',
     problem: 'Sin arranque tras actualización',
     solution: 'Diagnóstico y recuperación ECU',
     result: 'Vehículo operativo',
-    img: 'https://bb-folien.com/cache/bbfolien/105-1560646_235656059947361_1126934637_n-3c68ca3eee2e04d6.jpg'
   },
 ];
 
@@ -144,21 +141,12 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="carBadge">
-            <span className="ak big">AK</span>
-            <b>Autokeys</b>
-            <strong>Remaps Pro</strong>
-          </div>
           <div className="scanOverlay">
-            <span className="scanTag">Análisis en tiempo real</span>
-            <div className="scanCorner tl" />
-            <div className="scanCorner tr" />
-            <div className="scanCorner bl" />
-            <div className="scanCorner br" />
-            <div className="scanLine" />
-            <div className="scanPin p1"><span className="dot" /><span className="lbl">ECU / TCU<small>Diagnóstico OK</small></span></div>
-            <div className="scanPin p2"><span className="dot" /><span className="lbl">Airbag<small>Sistema OK</small></span></div>
-            <div className="scanPin p3"><span className="dot" /><span className="lbl">Inmovilizador<small>Sincronizado</small></span></div>
+            <span className="scanTag">Banco de pruebas · en vivo</span>
+            <div className="scanPin p1"><span className="dot" /><span className="lbl">Módulo IMMO<small>Sincronizado</small></span></div>
+            <div className="scanPin p2"><span className="dot" /><span className="lbl">ECU / TCU<small>Diagnóstico OK</small></span></div>
+            <div className="scanPin p3"><span className="dot" /><span className="lbl">EZS / CAS / FEM<small>Verificado</small></span></div>
+            <div className="scanPin p4"><span className="dot" /><span className="lbl">Airbag Crash Data<small>Sistema OK</small></span></div>
           </div>
         </div>
       </section>
@@ -189,7 +177,6 @@ export default function Home() {
         <div className="cards services">
           {services.map((s) => (
             <article className="card serviceCard" key={s.title}>
-              <div className="photo" style={{ backgroundImage: `url(${s.img})` }} />
               <div className="serviceIcon">{s.icon}</div>
               <h3>{s.title}</h3>
               <p>{s.text}</p>
@@ -241,7 +228,6 @@ export default function Home() {
         <div className="cards caseCards">
           {cases.map((c) => (
             <article className="caseCard" key={c.car}>
-              <div className="caseImg" style={{ backgroundImage: `url(${c.img})` }} />
               <div className="caseText">
                 <h3>{c.car}</h3>
                 <p><b>Problema:</b> {c.problem}</p>

@@ -66,6 +66,8 @@ export default function Home() {
 
   return (
     <main>
+      <div className="mesh"><span className="b1" /><span className="b2" /><span className="b3" /></div>
+      <div className="noiseLayer" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -97,8 +99,7 @@ export default function Home() {
       />
       <header className="topbar">
         <a className="brand" href="#inicio" aria-label="Autokeys Remaps Pro">
-          <span className="ak">AK</span>
-          <span><b>Autokeys</b><strong>Remaps Pro</strong><em>Electrónica avanzada del automóvil</em></span>
+          <img src="/logo-ak.png" alt="Autokeys Remaps Pro" className="brandLogo" />
         </a>
         <nav>
           <a href="#inicio">Inicio</a>
@@ -106,7 +107,7 @@ export default function Home() {
           <a href="#talleres">Talleres</a>
           <a href="#casos">Casos reales</a>
           <a href="#laboratorio">Laboratorio</a>
-          <a href={fileService} target="_blank" rel="noopener noreferrer">File Service</a>
+          <a href="https://akcloud.es" target="_blank" rel="noopener noreferrer" className="akCloudLink">AK Cloud ↗</a>
           <a href="#contacto">Contacto</a>
         </nav>
         <div className="socials" aria-label="Redes sociales">
@@ -118,13 +119,10 @@ export default function Home() {
       </header>
 
       <section id="inicio" className="hero">
-        <div className="heroShade" />
         <div className="heroContent">
           <div className="copy">
-            <h1><span>Autokeys</span><strong>Remaps Pro</strong></h1>
-            <p className="subtitle">Electrónica avanzada del automóvil</p>
-            <div className="redline" />
-            <h2>Especialistas en resolver<br />lo que otros <span>no pueden.</span></h2>
+            <div className="eyebrow"><i>✓</i> Casos resueltos en el laboratorio · en vivo</div>
+            <h2>Reparamos lo que<br />la mayoría <span>da por perdido.</span></h2>
             <p className="lead">Llaves, inmovilizadores, ECUs, módulos electrónicos, airbag, diagnosis avanzada y recuperación de sistemas para particulares y talleres.</p>
             <div className="ctaRow">
               <a className="btn primary stackBtn" href={whatsapp} target="_blank" rel="noopener noreferrer">
@@ -135,18 +133,45 @@ export default function Home() {
                 <span>▣ Área profesional</span>
                 <small>Talleres y distribuidores</small>
               </a>
-              <a className="btn fileBtn stackBtn" href={fileService} target="_blank" rel="noopener noreferrer">
-                <span>⚡ Acceso</span>
-                <small>File Service</small>
+              <a className="btn fileBtn stackBtn" href="https://akcloud.es" target="_blank" rel="noopener noreferrer">
+                <span>⚡ Portal</span>
+                <small>AK Cloud ↗</small>
               </a>
             </div>
           </div>
-          <div className="scanOverlay">
-            <span className="scanTag">Banco de pruebas · en vivo</span>
-            <div className="scanPin p1"><span className="dot" /><span className="lbl">Módulo IMMO<small>Sincronizado</small></span></div>
-            <div className="scanPin p2"><span className="dot" /><span className="lbl">ECU / TCU<small>Diagnóstico OK</small></span></div>
-            <div className="scanPin p3"><span className="dot" /><span className="lbl">EZS / CAS / FEM<small>Verificado</small></span></div>
-            <div className="scanPin p4"><span className="dot" /><span className="lbl">Airbag Crash Data<small>Sistema OK</small></span></div>
+
+          <div className="scene">
+            <svg className="orbitLine" viewBox="0 0 500 560" fill="none">
+              <path d="M60 480 C 140 420, 120 280, 220 220 S 340 120, 400 80" stroke="url(#orbitGrad)" strokeWidth="1.5" strokeDasharray="4 8"/>
+              <defs><linearGradient id="orbitGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#E23350" stopOpacity=".7"/>
+                <stop offset="100%" stopColor="#2BB8A6" stopOpacity=".2"/>
+              </linearGradient></defs>
+            </svg>
+
+            <div className="sceneInner">
+              <div className="glassCard cardMain">
+                <div className="glassHead"><span>CASOS_RESUELTOS.LOG</span><span className="live">EN VIVO</span></div>
+                <div className="glassRow"><div className="glassName">BMW F20<small>FEM averiado · no arranca</small></div><div className="pillOk">RESUELTO</div></div>
+                <div className="glassRow"><div className="glassName">Mercedes W204<small>EZS bloqueado · sin giro de llave</small></div><div className="pillOk">RESUELTO</div></div>
+                <div className="glassRow"><div className="glassName">Opel Insignia<small>Sin arranque tras actualización</small></div><div className="pillOk">RESUELTO</div></div>
+                <div className="glassRow"><div className="glassName">Audi A3<small>Llave perdida · sin unidad original</small></div><div className="pillOk">RESUELTO</div></div>
+              </div>
+
+              <div className="glassCard cardChip">
+                <div className="chipIcon">🔧</div>
+                <b>Caso Nº 6.512</b>
+                <span>En proceso ahora</span>
+              </div>
+
+              <div className="glassCard cardKey">🔑</div>
+
+              <div className="glassCard cardMini">
+                <span className="mono">TASA DE ÉXITO</span>
+                <b>99.4%</b>
+                <div className="miniBar"><i /></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -191,7 +216,7 @@ export default function Home() {
           <p>File service, clonación de módulos, reparaciones electrónicas, programación de llaves, soporte técnico y servicio nacional para profesionales.</p>
           <div className="workshopActions">
             <a className="btn outline" href={akCloudRegister} target="_blank" rel="noopener noreferrer">Solicitar alta como taller colaborador</a>
-            <a className="btn primary" href={fileService} target="_blank" rel="noopener noreferrer">Acceder al File Service</a>
+            <a className="btn primary" href={fileService} target="_blank" rel="noopener noreferrer">Acceder a AK Cloud</a>
           </div>
         </div>
         <div className="workshopGrid">
@@ -206,7 +231,7 @@ export default function Home() {
         <div className="fileServicePanel">
           <div>
             <p className="eyebrow">Plataforma 24h para profesionales</p>
-            <h2>File Service <span>profesional</span></h2>
+            <h2>AK Cloud <span>· portal 24h</span></h2>
             <p>Acceso directo para talleres y distribuidores: solicitudes online, soporte técnico y servicios de calibración electrónica.</p>
           </div>
           <div className="fileServicesList">
@@ -282,7 +307,7 @@ export default function Home() {
         </div>
         <div className="footBox"><b>WhatsApp</b><a href={whatsapp} target="_blank">632 982 646</a></div>
         <div className="footBox"><b>Email</b><a href="mailto:info@autokeyspro.es">info@autokeyspro.es</a></div>
-        <div className="footBox"><b>File Service</b><a href={fileService} target="_blank" rel="noopener noreferrer">Acceso talleres 24h</a></div>
+        <div className="footBox"><b>AK Cloud</b><a href={fileService} target="_blank" rel="noopener noreferrer">Acceso talleres 24h</a></div>
         <div className="footBox"><b>Ubicación</b><a href={maps} target="_blank">Cómo llegar</a></div>
       </footer>
 

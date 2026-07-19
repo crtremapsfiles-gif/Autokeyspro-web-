@@ -7,7 +7,7 @@ const maps = 'https://www.google.com/maps/search/?api=1&query=Av.+Andaluc%C3%ADa
 const fileService = 'https://akcloud.es/login';
 const akCloudRegister = 'https://akcloud.es/register';
 
-type IconName = 'key' | 'shield' | 'cpu' | 'star' | 'target' | 'alert' | 'truck' | 'headset' | 'shieldCheck' | 'trend';
+type IconName = 'key' | 'shield' | 'cpu' | 'star' | 'target' | 'alert' | 'truck' | 'headset' | 'shieldCheck' | 'trend' | 'scanner' | 'bench' | 'reprog';
 
 function Icon({ name }: { name: IconName }) {
   const common = { width: 22, height: 22, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };
@@ -32,6 +32,12 @@ function Icon({ name }: { name: IconName }) {
       return <svg {...common}><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" /><path d="M9.5 12l2 2 3.5-4" /></svg>;
     case 'trend':
       return <svg {...common}><path d="M3 17l6-6 4 4 8-8" /><path d="M15 7h6v6" /></svg>;
+    case 'scanner':
+      return <svg {...common}><rect x="3" y="4" width="14" height="10" rx="1.5" /><path d="M6 18h8M9 14v4M12 14v4" /><path d="M20 8l1.5 1.5L20 11" /></svg>;
+    case 'bench':
+      return <svg {...common}><rect x="3" y="5" width="18" height="11" rx="1.5" /><path d="M7 20h10M9 16v4M15 16v4" /><path d="M7 9h4M7 12h7" /></svg>;
+    case 'reprog':
+      return <svg {...common}><path d="M4 12a8 8 0 0114-5.3" /><path d="M18 4v4h-4" /><path d="M20 12a8 8 0 01-14 5.3" /><path d="M6 20v-4h4" /></svg>;
   }
 }
 
@@ -308,6 +314,7 @@ export default function Home() {
       <section id="laboratorio" className="lab equipmentLab reveal">
         <div className="labPhotos toolPhotos">
           <article className="labTool lab1">
+            <div className="toolIconBg"><Icon name="scanner" /></div>
             <div className="toolOverlay">
               <span>01</span>
               <h3>Autel IM608 Pro</h3>
@@ -315,6 +322,7 @@ export default function Home() {
             </div>
           </article>
           <article className="labTool lab2">
+            <div className="toolIconBg"><Icon name="bench" /></div>
             <div className="toolOverlay">
               <span>02</span>
               <h3>Magic Motorsport Flex</h3>
@@ -322,6 +330,7 @@ export default function Home() {
             </div>
           </article>
           <article className="labTool lab3">
+            <div className="toolIconBg"><Icon name="reprog" /></div>
             <div className="toolOverlay">
               <span>03</span>
               <h3>Alientech KESS3</h3>
